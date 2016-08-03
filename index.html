@@ -235,6 +235,313 @@
             
               
                 
+                <a class="post-title-link" href="/2016/08/03/linux系统的备份与还原/" itemprop="url">
+                  linux系统的备份与还原
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-08-03T23:14:43+08:00" content="2016-08-03">
+              2016-08-03
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>[TOC] </p>
+<h3 id="linux平时的使用"><a href="#linux平时的使用" class="headerlink" title="linux平时的使用"></a>linux平时的使用</h3><p>我用linux 平时都用来干什么了呢？</p>
+<h4 id="java开发"><a href="#java开发" class="headerlink" title="java开发"></a>java开发</h4><h4 id="前端开发"><a href="#前端开发" class="headerlink" title="前端开发"></a>前端开发</h4><h4 id="写日志写博客"><a href="#写日志写博客" class="headerlink" title="写日志写博客"></a>写日志写博客</h4><h4 id="主要是想学点C-语言的东西"><a href="#主要是想学点C-语言的东西" class="headerlink" title="主要是想学点C 语言的东西"></a>主要是想学点C 语言的东西</h4><h4 id="服务器这东西，我还是比较喜欢的"><a href="#服务器这东西，我还是比较喜欢的" class="headerlink" title="服务器这东西，我还是比较喜欢的"></a>服务器这东西，我还是比较喜欢的</h4><h3 id="使用系统备份的重要性"><a href="#使用系统备份的重要性" class="headerlink" title="使用系统备份的重要性"></a>使用系统备份的重要性</h3><p>就我现在来说吧，我对我的电脑安装了好多的ide与各种设置，那么，我可能因为什么原因，电脑就不行了，那我这个时候可能要重新的对我的电脑进行设置了，那跟window下的时候一样，我可能会用到ghost 这个东西，把关键的东西给备份下来，那到时候我就不用重新来</p>
+<h3 id="linux-系统备份是怎么备份的"><a href="#linux-系统备份是怎么备份的" class="headerlink" title="linux 系统备份是怎么备份的"></a>linux 系统备份是怎么备份的</h3>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/06/12/csdn/java 中用到的jdbc 调用存储过程与hibernate 调用存储过程 /" itemprop="url">
+                  java 中用到的jdbc 调用存储过程与hibernate 调用存储过程
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-06-12T10:51:11+08:00" content="2016-06-12">
+              2016-06-12
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="jdbc-中调用存储过程"><a href="#jdbc-中调用存储过程" class="headerlink" title="jdbc 中调用存储过程"></a>jdbc 中调用存储过程</h2><p>其实都是用是的Connection 来得到CallableStatement ,用CallableStatement的对像来查询，然后得到ResultSet 后面的就一样了，<br>那说一个要注意的问题吧，有的时候用java的jdbc 中调用存储过程与hibernate 调用存储过程，会遇到没有返回结果集的问题，其实只要在存储过程中 加上一句<br><figure class="highlight plain"><figcaption><span>nocount on</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">`</div></pre></td></tr></table></figure></p>
+<p>这样就ok了，<br>下面是jdbc 调用存储过程 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div></pre></td><td class="code"><pre><div class="line">import java.sql.CallableStatement;</div><div class="line">import java.sql.Connection;</div><div class="line">import java.sql.DriverManager;</div><div class="line">import java.sql.ResultSet;</div><div class="line"></div><div class="line">/**</div><div class="line"> * Created by Geek on 2016/6/15.</div><div class="line"> */</div><div class="line">public class JDBCTest &#123;</div><div class="line"></div><div class="line"></div><div class="line">        private String driverName = &quot;com.microsoft.sqlserver.jdbc.SQLServerDriver&quot;;//加载驱动程序</div><div class="line">        private String url = &quot;jdbc:sqlserver://10.1.42.34:1433;DatabaseName=HS_BI&quot;;//设置数据库连接串</div><div class="line">        private String user = &quot;sa&quot;;//数据库登录用户名</div><div class="line">        private String password = &quot;Wonders2009&quot;;//数据库登录密码</div><div class="line">        private static String message = &quot;恭喜，数据库连接正常！&quot;;</div><div class="line">        public void setDriverName(String newDriverName) &#123;</div><div class="line">            driverName = newDriverName;</div><div class="line">        &#125;</div><div class="line">        public String getDriverName() &#123;</div><div class="line">            return driverName;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        public void setUrl(String newUrl) &#123;</div><div class="line">            url = newUrl;</div><div class="line">        &#125;</div><div class="line">        public String getUrl() &#123;</div><div class="line">            return url;</div><div class="line">        &#125;</div><div class="line">        public void setUser(String newUser) &#123;</div><div class="line">            user = newUser;</div><div class="line">        &#125;</div><div class="line">        public String getUser() &#123;</div><div class="line">            return user;</div><div class="line">        &#125;</div><div class="line">        public void setPassword(String newPassword) &#123;</div><div class="line">            password = newPassword;</div><div class="line">        &#125;</div><div class="line">        public String getPassword() &#123;</div><div class="line">            return password;</div><div class="line">        &#125;</div><div class="line">        public Connection getConnection() &#123;</div><div class="line">            try &#123;</div><div class="line">                Class.forName(driverName);</div><div class="line">                return DriverManager.getConnection(url, user, password);</div><div class="line">            &#125; catch (Exception e) &#123;</div><div class="line">                e.printStackTrace();</div><div class="line">                message = &quot;数据库连接失败！&quot;;</div><div class="line">                return null;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        public static void main(String[] args) &#123;</div><div class="line">            try&#123;</div><div class="line">                JDBCTest dcm = new JDBCTest();</div><div class="line">                Connection conn = dcm.getConnection();</div><div class="line">                CallableStatement cs= conn.prepareCall(&quot;&#123;call usp_showrecordtest&#125;&quot;);</div><div class="line">                cs.execute();</div><div class="line">                ResultSet rs=cs.getResultSet();</div><div class="line"></div><div class="line">                System.out.println(rs);</div><div class="line">                System.out.println(message);</div><div class="line">            &#125;catch(Exception e)&#123;</div><div class="line">                e.printStackTrace();</div><div class="line">            &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="后续跟进hibernate来调用存储过程"><a href="#后续跟进hibernate来调用存储过程" class="headerlink" title="后续跟进hibernate来调用存储过程"></a>后续跟进hibernate来调用存储过程</h3>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/06/12/csdn/Arch linux 的安装/" itemprop="url">
+                  Arch linux 的安装
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-06-12T10:51:11+08:00" content="2016-06-12">
+              2016-06-12
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="arch-linux-的安装"><a href="#arch-linux-的安装" class="headerlink" title="arch linux 的安装"></a>arch linux 的安装</h2><p>家里有一台300块买的台式机，感觉就装这个比较好一点，本文是自用与学习的记录，有不少配置是没有配置的，这是自己总结的感觉比较好设置一点的</p>
+<p>##参考<br>    <a href="http://bbs.archlinuxcn.org/viewtopic.php?id=1037" target="_blank" rel="external">http://bbs.archlinuxcn.org/viewtopic.php?id=1037</a></p>
+<h2 id="U盘的制作"><a href="#U盘的制作" class="headerlink" title="U盘的制作"></a>U盘的制作</h2><p>我用的是linux 下的 dd<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dd  if=xxx.iso of=/dev/sdb bs=1M</div></pre></td></tr></table></figure></p>
+<h2 id="开机启动到U盘"><a href="#开机启动到U盘" class="headerlink" title="开机启动到U盘"></a>开机启动到U盘</h2><p>我用的UEFI ,这里我们开机用UEFI启动模式，启动到Arch linux<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># ls /sys/firmware/efi/efivars</div></pre></td></tr></table></figure></p>
+<h2 id="这里的键盘布局-连接到因特网，更新系统时间都省略"><a href="#这里的键盘布局-连接到因特网，更新系统时间都省略" class="headerlink" title="这里的键盘布局 连接到因特网，更新系统时间都省略"></a>这里的键盘布局 连接到因特网，更新系统时间都省略</h2><h2 id="识别设备"><a href="#识别设备" class="headerlink" title="识别设备"></a>识别设备</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># lsblk</div></pre></td></tr></table></figure>
+<h2 id="分区工具"><a href="#分区工具" class="headerlink" title="分区工具"></a>分区工具</h2><p>这里我用的是cfdisk<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#cfdisk /dev/sda</div></pre></td></tr></table></figure></p>
+<h2 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h2><p>看自已分吧，这里不细说了</p>
+<h2 id="格式化分区"><a href="#格式化分区" class="headerlink" title="格式化分区"></a>格式化分区</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mkfs.ext4 格式化为Ext4格式 </div><div class="line">   为让 genfstab 能生成fstab时包含 交换分区，须先激活交换分区</div><div class="line">   mkswap 格式化为swap用swapon命令激活</div></pre></td></tr></table></figure>
+<h2 id="修改源"><a href="#修改源" class="headerlink" title="修改源"></a>修改源</h2><p>这里我用的是163的源<br>x86_64用下面这个<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Server = http://mirrors.163.com/archlinux/$repo/os/$arch</div></pre></td></tr></table></figure></p>
+<p>i686用这个<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Server = http://mirrors.163.com/archlinux/$repo/os/i686</div><div class="line">Server = http://mirrors.sohu.com/archlinux/$repo/os/i686</div></pre></td></tr></table></figure></p>
+<h2 id="安装基础系统"><a href="#安装基础系统" class="headerlink" title="安装基础系统"></a>安装基础系统</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># pacstrap -i /mnt base base-devel</div></pre></td></tr></table></figure>
+<h2 id="安装syslinux"><a href="#安装syslinux" class="headerlink" title="安装syslinux"></a>安装syslinux</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pacman -S syslinux</div></pre></td></tr></table></figure>
+<h2 id="更新syslinux"><a href="#更新syslinux" class="headerlink" title="更新syslinux"></a>更新syslinux</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">syslinux-install_update -iam</div></pre></td></tr></table></figure>
+<h2 id="修改syslinux配置文件"><a href="#修改syslinux配置文件" class="headerlink" title="修改syslinux配置文件"></a>修改syslinux配置文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">修改正确的/boot/syslinux/syslinux.cfg</div><div class="line">   中的Root分区，把wr 改为ro</div></pre></td></tr></table></figure>
+<p><strong>这里要注意root 目录的设备的设定</strong> </p>
+<h2 id="启用开机网络"><a href="#启用开机网络" class="headerlink" title="启用开机网络"></a>启用开机网络</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">systemctl enable dhcpcd</div></pre></td></tr></table></figure>
+<h2 id="添加管理员密码"><a href="#添加管理员密码" class="headerlink" title="添加管理员密码"></a>添加管理员密码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">passwd</div></pre></td></tr></table></figure>
+<h2 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">	</div><div class="line">useradd -m -g users  -s /bin/bash linzi</div><div class="line">添加用户密码</div></pre></td></tr></table></figure>
+<h2 id="安装xorg"><a href="#安装xorg" class="headerlink" title="安装xorg"></a>安装xorg</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">pacman -Syy</div><div class="line">   pacman -S xorg</div></pre></td></tr></table></figure>
+<h2 id="安装xfce4"><a href="#安装xfce4" class="headerlink" title="安装xfce4"></a>安装xfce4</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pacman -S xfce4</div></pre></td></tr></table></figure>
+<h2 id="安装chromium"><a href="#安装chromium" class="headerlink" title="安装chromium"></a>安装chromium</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pacman -S chromium</div></pre></td></tr></table></figure>
+<h2 id="中文乱码问题"><a href="#中文乱码问题" class="headerlink" title="中文乱码问题"></a>中文乱码问题</h2><p>pacman -S wqy-zenhei ttf-fireflysung(flash乱码)</p>
+<h2 id="bash-ifconfig-command-not-found"><a href="#bash-ifconfig-command-not-found" class="headerlink" title="bash: ifconfig: command not found"></a>bash: ifconfig: command not found</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo pacman -S net-tools dnsutils inetutils iproute2</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/06/12/csdn/Hibernate get和load区别/" itemprop="url">
                   Hibernate get和load区别
                 </a>
@@ -630,218 +937,7 @@
             
               
                 
-                <a class="post-title-link" href="/2016/06/12/csdn/Arch linux 的安装/" itemprop="url">
-                  Arch linux 的安装
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-06-12T10:51:11+08:00" content="2016-06-12">
-              2016-06-12
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="arch-linux-的安装"><a href="#arch-linux-的安装" class="headerlink" title="arch linux 的安装"></a>arch linux 的安装</h2><p>家里有一台300块买的台式机，感觉就装这个比较好一点，本文是自用与学习的记录，有不少配置是没有配置的，这是自己总结的感觉比较好设置一点的</p>
-<p>##参考<br>    <a href="http://bbs.archlinuxcn.org/viewtopic.php?id=1037" target="_blank" rel="external">http://bbs.archlinuxcn.org/viewtopic.php?id=1037</a></p>
-<h2 id="U盘的制作"><a href="#U盘的制作" class="headerlink" title="U盘的制作"></a>U盘的制作</h2><p>我用的是linux 下的 dd<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dd  if=xxx.iso of=/dev/sdb bs=1M</div></pre></td></tr></table></figure></p>
-<h2 id="开机启动到U盘"><a href="#开机启动到U盘" class="headerlink" title="开机启动到U盘"></a>开机启动到U盘</h2><p>我用的UEFI ,这里我们开机用UEFI启动模式，启动到Arch linux<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># ls /sys/firmware/efi/efivars</div></pre></td></tr></table></figure></p>
-<h2 id="这里的键盘布局-连接到因特网，更新系统时间都省略"><a href="#这里的键盘布局-连接到因特网，更新系统时间都省略" class="headerlink" title="这里的键盘布局 连接到因特网，更新系统时间都省略"></a>这里的键盘布局 连接到因特网，更新系统时间都省略</h2><h2 id="识别设备"><a href="#识别设备" class="headerlink" title="识别设备"></a>识别设备</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># lsblk</div></pre></td></tr></table></figure>
-<h2 id="分区工具"><a href="#分区工具" class="headerlink" title="分区工具"></a>分区工具</h2><p>这里我用的是cfdisk<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#cfdisk /dev/sda</div></pre></td></tr></table></figure></p>
-<h2 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h2><p>看自已分吧，这里不细说了</p>
-<h2 id="格式化分区"><a href="#格式化分区" class="headerlink" title="格式化分区"></a>格式化分区</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mkfs.ext4 格式化为Ext4格式 </div><div class="line">   为让 genfstab 能生成fstab时包含 交换分区，须先激活交换分区</div><div class="line">   mkswap 格式化为swap用swapon命令激活</div></pre></td></tr></table></figure>
-<h2 id="修改源"><a href="#修改源" class="headerlink" title="修改源"></a>修改源</h2><p>这里我用的是163的源<br>x86_64用下面这个<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Server = http://mirrors.163.com/archlinux/$repo/os/$arch</div></pre></td></tr></table></figure></p>
-<p>i686用这个<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Server = http://mirrors.163.com/archlinux/$repo/os/i686</div><div class="line">Server = http://mirrors.sohu.com/archlinux/$repo/os/i686</div></pre></td></tr></table></figure></p>
-<h2 id="安装基础系统"><a href="#安装基础系统" class="headerlink" title="安装基础系统"></a>安装基础系统</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># pacstrap -i /mnt base base-devel</div></pre></td></tr></table></figure>
-<h2 id="安装syslinux"><a href="#安装syslinux" class="headerlink" title="安装syslinux"></a>安装syslinux</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pacman -S syslinux</div></pre></td></tr></table></figure>
-<h2 id="更新syslinux"><a href="#更新syslinux" class="headerlink" title="更新syslinux"></a>更新syslinux</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">syslinux-install_update -iam</div></pre></td></tr></table></figure>
-<h2 id="修改syslinux配置文件"><a href="#修改syslinux配置文件" class="headerlink" title="修改syslinux配置文件"></a>修改syslinux配置文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">修改正确的/boot/syslinux/syslinux.cfg</div><div class="line">   中的Root分区，把wr 改为ro</div></pre></td></tr></table></figure>
-<p><strong>这里要注意root 目录的设备的设定</strong> </p>
-<h2 id="启用开机网络"><a href="#启用开机网络" class="headerlink" title="启用开机网络"></a>启用开机网络</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">systemctl enable dhcpcd</div></pre></td></tr></table></figure>
-<h2 id="添加管理员密码"><a href="#添加管理员密码" class="headerlink" title="添加管理员密码"></a>添加管理员密码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">passwd</div></pre></td></tr></table></figure>
-<h2 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">	</div><div class="line">useradd -m -g users  -s /bin/bash linzi</div><div class="line">添加用户密码</div></pre></td></tr></table></figure>
-<h2 id="安装xorg"><a href="#安装xorg" class="headerlink" title="安装xorg"></a>安装xorg</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">pacman -Syy</div><div class="line">   pacman -S xorg</div></pre></td></tr></table></figure>
-<h2 id="安装xfce4"><a href="#安装xfce4" class="headerlink" title="安装xfce4"></a>安装xfce4</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pacman -S xfce4</div></pre></td></tr></table></figure>
-<h2 id="安装chromium"><a href="#安装chromium" class="headerlink" title="安装chromium"></a>安装chromium</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pacman -S chromium</div></pre></td></tr></table></figure>
-<h2 id="中文乱码问题"><a href="#中文乱码问题" class="headerlink" title="中文乱码问题"></a>中文乱码问题</h2><p>pacman -S wqy-zenhei ttf-fireflysung(flash乱码)</p>
-<h2 id="bash-ifconfig-command-not-found"><a href="#bash-ifconfig-command-not-found" class="headerlink" title="bash: ifconfig: command not found"></a>bash: ifconfig: command not found</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo pacman -S net-tools dnsutils inetutils iproute2</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/12/csdn/java 中用到的jdbc 调用存储过程与hibernate 调用存储过程 /" itemprop="url">
-                  java 中用到的jdbc 调用存储过程与hibernate 调用存储过程
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-06-12T10:51:11+08:00" content="2016-06-12">
-              2016-06-12
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="jdbc-中调用存储过程"><a href="#jdbc-中调用存储过程" class="headerlink" title="jdbc 中调用存储过程"></a>jdbc 中调用存储过程</h2><p>其实都是用是的Connection 来得到CallableStatement ,用CallableStatement的对像来查询，然后得到ResultSet 后面的就一样了，<br>那说一个要注意的问题吧，有的时候用java的jdbc 中调用存储过程与hibernate 调用存储过程，会遇到没有返回结果集的问题，其实只要在存储过程中 加上一句<br><figure class="highlight plain"><figcaption><span>nocount on</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">`</div></pre></td></tr></table></figure></p>
-<p>这样就ok了，<br>下面是jdbc 调用存储过程 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div></pre></td><td class="code"><pre><div class="line">import java.sql.CallableStatement;</div><div class="line">import java.sql.Connection;</div><div class="line">import java.sql.DriverManager;</div><div class="line">import java.sql.ResultSet;</div><div class="line"></div><div class="line">/**</div><div class="line"> * Created by Geek on 2016/6/15.</div><div class="line"> */</div><div class="line">public class JDBCTest &#123;</div><div class="line"></div><div class="line"></div><div class="line">        private String driverName = &quot;com.microsoft.sqlserver.jdbc.SQLServerDriver&quot;;//加载驱动程序</div><div class="line">        private String url = &quot;jdbc:sqlserver://10.1.42.34:1433;DatabaseName=HS_BI&quot;;//设置数据库连接串</div><div class="line">        private String user = &quot;sa&quot;;//数据库登录用户名</div><div class="line">        private String password = &quot;Wonders2009&quot;;//数据库登录密码</div><div class="line">        private static String message = &quot;恭喜，数据库连接正常！&quot;;</div><div class="line">        public void setDriverName(String newDriverName) &#123;</div><div class="line">            driverName = newDriverName;</div><div class="line">        &#125;</div><div class="line">        public String getDriverName() &#123;</div><div class="line">            return driverName;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        public void setUrl(String newUrl) &#123;</div><div class="line">            url = newUrl;</div><div class="line">        &#125;</div><div class="line">        public String getUrl() &#123;</div><div class="line">            return url;</div><div class="line">        &#125;</div><div class="line">        public void setUser(String newUser) &#123;</div><div class="line">            user = newUser;</div><div class="line">        &#125;</div><div class="line">        public String getUser() &#123;</div><div class="line">            return user;</div><div class="line">        &#125;</div><div class="line">        public void setPassword(String newPassword) &#123;</div><div class="line">            password = newPassword;</div><div class="line">        &#125;</div><div class="line">        public String getPassword() &#123;</div><div class="line">            return password;</div><div class="line">        &#125;</div><div class="line">        public Connection getConnection() &#123;</div><div class="line">            try &#123;</div><div class="line">                Class.forName(driverName);</div><div class="line">                return DriverManager.getConnection(url, user, password);</div><div class="line">            &#125; catch (Exception e) &#123;</div><div class="line">                e.printStackTrace();</div><div class="line">                message = &quot;数据库连接失败！&quot;;</div><div class="line">                return null;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        public static void main(String[] args) &#123;</div><div class="line">            try&#123;</div><div class="line">                JDBCTest dcm = new JDBCTest();</div><div class="line">                Connection conn = dcm.getConnection();</div><div class="line">                CallableStatement cs= conn.prepareCall(&quot;&#123;call usp_showrecordtest&#125;&quot;);</div><div class="line">                cs.execute();</div><div class="line">                ResultSet rs=cs.getResultSet();</div><div class="line"></div><div class="line">                System.out.println(rs);</div><div class="line">                System.out.println(message);</div><div class="line">            &#125;catch(Exception e)&#123;</div><div class="line">                e.printStackTrace();</div><div class="line">            &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="后续跟进hibernate来调用存储过程"><a href="#后续跟进hibernate来调用存储过程" class="headerlink" title="后续跟进hibernate来调用存储过程"></a>后续跟进hibernate来调用存储过程</h3>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/08/04/csdn/javascript中的数据类型的问题/" itemprop="url">
+                <a class="post-title-link" href="/2015/08/04/csdn/Windows 端的makedown 编辑器 haroopad/" itemprop="url">
                   javascript中的数据类型的问题
                 </a>
               
@@ -938,7 +1034,7 @@
             
               
                 
-                <a class="post-title-link" href="/2015/08/04/csdn/Windows 端的makedown 编辑器 haroopad/" itemprop="url">
+                <a class="post-title-link" href="/2015/08/04/csdn/javascript中的数据类型的问题/" itemprop="url">
                   javascript中的数据类型的问题
                 </a>
               
@@ -1178,100 +1274,6 @@ jeDate({
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/05/04/csdn/javascript中的货币格式化/" itemprop="url">
-                  javascript 中的货币格式化
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2015-05-04T10:51:11+08:00" content="2015-05-04">
-              2015-05-04
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    function cc(s)&#123;</div><div class="line">        if(/[^0-9\.]/.test(s)) return &quot;invalid value&quot;;</div><div class="line">        s=s.replace(/^(\d*)$/,&quot;$1.&quot;);</div><div class="line">        s=(s+&quot;00&quot;).replace(/(\d*\.\d\d)\d*/,&quot;$1&quot;);</div><div class="line">        s=s.replace(&quot;.&quot;,&quot;,&quot;);</div><div class="line">        var re=/(\d)(\d&#123;3&#125;,)/;</div><div class="line">        while(re.test(s))</div><div class="line">            s=s.replace(re,&quot;$1,$2&quot;);</div><div class="line">        s=s.replace(/,(\d\d)$/,&quot;.$1&quot;);</div><div class="line">        return &quot;￥&quot; + s.replace(/^\./,&quot;0.&quot;)</div><div class="line">    &#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;input onchange=&quot;this.value=cc(this.value)&quot;&gt;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1317,7 +1319,7 @@ jeDate({
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">Artikel</span>
             </a>
           </div>

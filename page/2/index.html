@@ -235,6 +235,100 @@
             
               
                 
+                <a class="post-title-link" href="/2015/05/04/csdn/javascript中的货币格式化/" itemprop="url">
+                  javascript 中的货币格式化
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2015-05-04T10:51:11+08:00" content="2015-05-04">
+              2015-05-04
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    function cc(s)&#123;</div><div class="line">        if(/[^0-9\.]/.test(s)) return &quot;invalid value&quot;;</div><div class="line">        s=s.replace(/^(\d*)$/,&quot;$1.&quot;);</div><div class="line">        s=(s+&quot;00&quot;).replace(/(\d*\.\d\d)\d*/,&quot;$1&quot;);</div><div class="line">        s=s.replace(&quot;.&quot;,&quot;,&quot;);</div><div class="line">        var re=/(\d)(\d&#123;3&#125;,)/;</div><div class="line">        while(re.test(s))</div><div class="line">            s=s.replace(re,&quot;$1,$2&quot;);</div><div class="line">        s=s.replace(/,(\d\d)$/,&quot;.$1&quot;);</div><div class="line">        return &quot;￥&quot; + s.replace(/^\./,&quot;0.&quot;)</div><div class="line">    &#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;input onchange=&quot;this.value=cc(this.value)&quot;&gt;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2015/05/04/csdn/快逸报表（润乾报表使用）（v4 版本）/" itemprop="url">
                   快逸报表（润乾报表使用）（v4 版本）
                 </a>
@@ -292,6 +386,198 @@
 </code></pre><h6 id="宏定义"><a href="#宏定义" class="headerlink" title="宏定义"></a>宏定义</h6><pre><code>应用场景 ： 我们有的时候要用到报表的列的排序，可有的时候我们并用不到这个排序，那么我们就用到了这个宏定义了，其实我感觉宏定义就是把我们用到的Sql 用字符串的方式拼接给了sql 我们用到了，就把这个要拼接的sql 传给我们的动态的宏，这时候我们就可以方便自由的使用我们的报表了！
 </code></pre><h6 id="说一下这个报表的美化吧"><a href="#说一下这个报表的美化吧" class="headerlink" title="说一下这个报表的美化吧"></a>说一下这个报表的美化吧</h6><pre><code>我们公司用的是比较老的版本的，可是我们做报表的要把这个东西放给医院用的，不漂亮，这个说不过去吧，那么我也就一个简单的方法，也是一个偷懒的方法吧，我用了一个bootStrap ，来做的表格的美化，这里说一下，这个表格的内容的id 是跟润乾标签中name是一个的。这个比较坑的是，表头跟表的内容是放到了两个table 中！
 </code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/03/04/csdn/html合并单元格/" itemprop="url">
+                  html 中 table 的练习 关于合并单元格
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2015-03-04T10:51:11+08:00" content="2015-03-04">
+              2015-03-04
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://img.blog.csdn.net/20150327085313696" alt="code"><br>![样式]<br>(<a href="http://img.blog.csdn.net/20150327085120424)50327085035758" target="_blank" rel="external">http://img.blog.csdn.net/20150327085120424)50327085035758</a>)</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/03/04/csdn/linux中使用 新世纪五笔输入法/" itemprop="url">
+                  linux 中 使用 新世纪五笔输入法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2015-03-04T10:51:11+08:00" content="2015-03-04">
+              2015-03-04
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>正如新世纪五笔输入法在windows 下是收费的情况是一样的，<br>我们大linux 下没有一个可以让我们轻松使用的新世纪五笔输入法，<br>可以方便使用的只有我们的86版的五笔输入法，不过我是用的新世纪输入 ，<br>。。。。。。我又在扯了！！！<br>进入正题：<br>    –你人安上ibus-rime 输入法<br>        以前用Fitcx -rime 切到英文的时候是全角，怎么切都回不来，<br>        这次就用了ibus 现在用着爽着呢</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install ibus-rime</div></pre></td></tr></table></figure>
+<p>然后下载<br>rime 的新世纪五笔的配置文件与码表，<br><a href="http://download.csdn.net/detail/pioneerlinzi/9419943" target="_blank" rel="external">http://download.csdn.net/detail/pioneerlinzi/9419943</a><br>下一步就是打文件 放到</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">~/.config/ibus/rime</div></pre></td></tr></table></figure>
+<p>就行了，不要放了重新部署！</p>
+
           
         
       
@@ -518,198 +804,6 @@
             
               
                 
-                <a class="post-title-link" href="/2015/03/04/csdn/linux中使用 新世纪五笔输入法/" itemprop="url">
-                  linux 中 使用 新世纪五笔输入法
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2015-03-04T10:51:11+08:00" content="2015-03-04">
-              2015-03-04
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>正如新世纪五笔输入法在windows 下是收费的情况是一样的，<br>我们大linux 下没有一个可以让我们轻松使用的新世纪五笔输入法，<br>可以方便使用的只有我们的86版的五笔输入法，不过我是用的新世纪输入 ，<br>。。。。。。我又在扯了！！！<br>进入正题：<br>    –你人安上ibus-rime 输入法<br>        以前用Fitcx -rime 切到英文的时候是全角，怎么切都回不来，<br>        这次就用了ibus 现在用着爽着呢</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install ibus-rime</div></pre></td></tr></table></figure>
-<p>然后下载<br>rime 的新世纪五笔的配置文件与码表，<br><a href="http://download.csdn.net/detail/pioneerlinzi/9419943" target="_blank" rel="external">http://download.csdn.net/detail/pioneerlinzi/9419943</a><br>下一步就是打文件 放到</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">~/.config/ibus/rime</div></pre></td></tr></table></figure>
-<p>就行了，不要放了重新部署！</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/03/04/csdn/html合并单元格/" itemprop="url">
-                  html 中 table 的练习 关于合并单元格
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2015-03-04T10:51:11+08:00" content="2015-03-04">
-              2015-03-04
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="http://img.blog.csdn.net/20150327085313696" alt="code"><br>![样式]<br>(<a href="http://img.blog.csdn.net/20150327085120424)50327085035758" target="_blank" rel="external">http://img.blog.csdn.net/20150327085120424)50327085035758</a>)</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2015/02/04/csdn/uefi硬盘下windows与linux 双系时改变引导首选项为linux/" itemprop="url">
                   uefi 硬盘下windows 与linux 双系时改变引导首选项为linux
                 </a>
@@ -832,7 +926,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
