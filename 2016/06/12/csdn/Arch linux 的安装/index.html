@@ -1,0 +1,589 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="linux," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="arch linux 的安装家里有一台300块买的台式机，感觉就装这个比较好一点，本文是自用与学习的记录，有不少配置是没有配置的，这是自己总结的感觉比较好设置一点的
+##参考    http://bbs.archlinuxcn.org/viewtopic.php?id=1037
+U盘的制作我用的是linux 下的 dd1dd  if=xxx.iso of=/dev/sdb bs=1M
+开机启动到U">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Arch linux 的安装">
+<meta property="og:url" content="http://yoursite.com/2016/06/12/csdn/Arch linux 的安装/index.html">
+<meta property="og:site_name" content="blog-linzi">
+<meta property="og:description" content="arch linux 的安装家里有一台300块买的台式机，感觉就装这个比较好一点，本文是自用与学习的记录，有不少配置是没有配置的，这是自己总结的感觉比较好设置一点的
+##参考    http://bbs.archlinuxcn.org/viewtopic.php?id=1037
+U盘的制作我用的是linux 下的 dd1dd  if=xxx.iso of=/dev/sdb bs=1M
+开机启动到U">
+<meta property="og:updated_time" content="2016-08-03T14:33:54.577Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Arch linux 的安装">
+<meta name="twitter:description" content="arch linux 的安装家里有一台300块买的台式机，感觉就装这个比较好一点，本文是自用与学习的记录，有不少配置是没有配置的，这是自己总结的感觉比较好设置一点的
+##参考    http://bbs.archlinuxcn.org/viewtopic.php?id=1037
+U盘的制作我用的是linux 下的 dd1dd  if=xxx.iso of=/dev/sdb bs=1M
+开机启动到U">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/06/12/csdn/Arch linux 的安装/"/>
+
+  <title> Arch linux 的安装 | blog-linzi </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">blog-linzi</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Record the past,enjoy life!</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Arch linux 的安装
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-06-12T10:51:11+08:00" content="2016-06-12">
+              2016-06-12
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="arch-linux-的安装"><a href="#arch-linux-的安装" class="headerlink" title="arch linux 的安装"></a>arch linux 的安装</h2><p>家里有一台300块买的台式机，感觉就装这个比较好一点，本文是自用与学习的记录，有不少配置是没有配置的，这是自己总结的感觉比较好设置一点的</p>
+<p>##参考<br>    <a href="http://bbs.archlinuxcn.org/viewtopic.php?id=1037" target="_blank" rel="external">http://bbs.archlinuxcn.org/viewtopic.php?id=1037</a></p>
+<h2 id="U盘的制作"><a href="#U盘的制作" class="headerlink" title="U盘的制作"></a>U盘的制作</h2><p>我用的是linux 下的 dd<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dd  if=xxx.iso of=/dev/sdb bs=1M</div></pre></td></tr></table></figure></p>
+<h2 id="开机启动到U盘"><a href="#开机启动到U盘" class="headerlink" title="开机启动到U盘"></a>开机启动到U盘</h2><p>我用的UEFI ,这里我们开机用UEFI启动模式，启动到Arch linux<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># ls /sys/firmware/efi/efivars</div></pre></td></tr></table></figure></p>
+<h2 id="这里的键盘布局-连接到因特网，更新系统时间都省略"><a href="#这里的键盘布局-连接到因特网，更新系统时间都省略" class="headerlink" title="这里的键盘布局 连接到因特网，更新系统时间都省略"></a>这里的键盘布局 连接到因特网，更新系统时间都省略</h2><h2 id="识别设备"><a href="#识别设备" class="headerlink" title="识别设备"></a>识别设备</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># lsblk</div></pre></td></tr></table></figure>
+<h2 id="分区工具"><a href="#分区工具" class="headerlink" title="分区工具"></a>分区工具</h2><p>这里我用的是cfdisk<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#cfdisk /dev/sda</div></pre></td></tr></table></figure></p>
+<h2 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h2><p>看自已分吧，这里不细说了</p>
+<h2 id="格式化分区"><a href="#格式化分区" class="headerlink" title="格式化分区"></a>格式化分区</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mkfs.ext4 格式化为Ext4格式 </div><div class="line">   为让 genfstab 能生成fstab时包含 交换分区，须先激活交换分区</div><div class="line">   mkswap 格式化为swap用swapon命令激活</div></pre></td></tr></table></figure>
+<h2 id="修改源"><a href="#修改源" class="headerlink" title="修改源"></a>修改源</h2><p>这里我用的是163的源<br>x86_64用下面这个<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Server = http://mirrors.163.com/archlinux/$repo/os/$arch</div></pre></td></tr></table></figure></p>
+<p>i686用这个<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Server = http://mirrors.163.com/archlinux/$repo/os/i686</div><div class="line">Server = http://mirrors.sohu.com/archlinux/$repo/os/i686</div></pre></td></tr></table></figure></p>
+<h2 id="安装基础系统"><a href="#安装基础系统" class="headerlink" title="安装基础系统"></a>安装基础系统</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># pacstrap -i /mnt base base-devel</div></pre></td></tr></table></figure>
+<h2 id="安装syslinux"><a href="#安装syslinux" class="headerlink" title="安装syslinux"></a>安装syslinux</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pacman -S syslinux</div></pre></td></tr></table></figure>
+<h2 id="更新syslinux"><a href="#更新syslinux" class="headerlink" title="更新syslinux"></a>更新syslinux</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">syslinux-install_update -iam</div></pre></td></tr></table></figure>
+<h2 id="修改syslinux配置文件"><a href="#修改syslinux配置文件" class="headerlink" title="修改syslinux配置文件"></a>修改syslinux配置文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">修改正确的/boot/syslinux/syslinux.cfg</div><div class="line">   中的Root分区，把wr 改为ro</div></pre></td></tr></table></figure>
+<p><strong>这里要注意root 目录的设备的设定</strong> </p>
+<h2 id="启用开机网络"><a href="#启用开机网络" class="headerlink" title="启用开机网络"></a>启用开机网络</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">systemctl enable dhcpcd</div></pre></td></tr></table></figure>
+<h2 id="添加管理员密码"><a href="#添加管理员密码" class="headerlink" title="添加管理员密码"></a>添加管理员密码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">passwd</div></pre></td></tr></table></figure>
+<h2 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">	</div><div class="line">useradd -m -g users  -s /bin/bash linzi</div><div class="line">添加用户密码</div></pre></td></tr></table></figure>
+<h2 id="安装xorg"><a href="#安装xorg" class="headerlink" title="安装xorg"></a>安装xorg</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">pacman -Syy</div><div class="line">   pacman -S xorg</div></pre></td></tr></table></figure>
+<h2 id="安装xfce4"><a href="#安装xfce4" class="headerlink" title="安装xfce4"></a>安装xfce4</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pacman -S xfce4</div></pre></td></tr></table></figure>
+<h2 id="安装chromium"><a href="#安装chromium" class="headerlink" title="安装chromium"></a>安装chromium</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pacman -S chromium</div></pre></td></tr></table></figure>
+<h2 id="中文乱码问题"><a href="#中文乱码问题" class="headerlink" title="中文乱码问题"></a>中文乱码问题</h2><p>pacman -S wqy-zenhei ttf-fireflysung(flash乱码)</p>
+<h2 id="bash-ifconfig-command-not-found"><a href="#bash-ifconfig-command-not-found" class="headerlink" title="bash: ifconfig: command not found"></a>bash: ifconfig: command not found</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo pacman -S net-tools dnsutils inetutils iproute2</div></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag">#linux</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/12/csdn/arch linux中的jdk的安装/" rel="next" title="arch linux中的jdk的安装">
+                <i class="fa fa-chevron-left"></i> arch linux中的jdk的安装
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/08/03/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="linzi" />
+          <p class="site-author-name" itemprop="name">linzi</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">Tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#arch-linux-的安装"><span class="nav-number">1.</span> <span class="nav-text">arch linux 的安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#U盘的制作"><span class="nav-number">2.</span> <span class="nav-text">U盘的制作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开机启动到U盘"><span class="nav-number">3.</span> <span class="nav-text">开机启动到U盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#这里的键盘布局-连接到因特网，更新系统时间都省略"><span class="nav-number">4.</span> <span class="nav-text">这里的键盘布局 连接到因特网，更新系统时间都省略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#识别设备"><span class="nav-number">5.</span> <span class="nav-text">识别设备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分区工具"><span class="nav-number">6.</span> <span class="nav-text">分区工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分区"><span class="nav-number">7.</span> <span class="nav-text">分区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#格式化分区"><span class="nav-number">8.</span> <span class="nav-text">格式化分区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改源"><span class="nav-number">9.</span> <span class="nav-text">修改源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装基础系统"><span class="nav-number">10.</span> <span class="nav-text">安装基础系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装syslinux"><span class="nav-number">11.</span> <span class="nav-text">安装syslinux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新syslinux"><span class="nav-number">12.</span> <span class="nav-text">更新syslinux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改syslinux配置文件"><span class="nav-number">13.</span> <span class="nav-text">修改syslinux配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启用开机网络"><span class="nav-number">14.</span> <span class="nav-text">启用开机网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加管理员密码"><span class="nav-number">15.</span> <span class="nav-text">添加管理员密码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加用户"><span class="nav-number">16.</span> <span class="nav-text">添加用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装xorg"><span class="nav-number">17.</span> <span class="nav-text">安装xorg</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装xfce4"><span class="nav-number">18.</span> <span class="nav-text">安装xfce4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装chromium"><span class="nav-number">19.</span> <span class="nav-text">安装chromium</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中文乱码问题"><span class="nav-number">20.</span> <span class="nav-text">中文乱码问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bash-ifconfig-command-not-found"><span class="nav-number">21.</span> <span class="nav-text">bash: ifconfig: command not found</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">linzi</span>
+</div>
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
