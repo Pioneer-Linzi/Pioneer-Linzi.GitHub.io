@@ -1,90 +1,22 @@
-<!doctype html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion">
+<!DOCTYPE HTML>
+<html>
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  
+  <title>linux系统的备份与还原 | blog-linzi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <meta name="author" content="linzi">
   
   
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
+    <meta name="description" content="[TOC] 
+linux平时的使用我用linux 平时都用来干什么了呢？
+java开发我在linux主要用的是idea这个做的开发工具，平时工作的时候也都是用这个的
+前端开发前端开发我现在主要用的vim 这个东西 ，我还没有学习太多，我感觉这个东西学习起来还是比较慢的，但是我还是慢慢的用吧，平时多用一点，最后还是会成一个比较牛的人的
+写日志写博客主要用的是hexo 来写的日志，并在github上显">
   
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="linux," />
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
-
-
-
-
-
-
-<meta name="description" content="[TOC] 
+  <meta name="description" content="[TOC] 
 linux平时的使用我用linux 平时都用来干什么了呢？
 java开发我在linux主要用的是idea这个做的开发工具，平时工作的时候也都是用这个的
 前端开发前端开发我现在主要用的vim 这个东西 ，我还没有学习太多，我感觉这个东西学习起来还是比较慢的，但是我还是慢慢的用吧，平时多用一点，最后还是会成一个比较牛的人的
@@ -106,189 +38,59 @@ linux平时的使用我用linux 平时都用来干什么了呢？
 java开发我在linux主要用的是idea这个做的开发工具，平时工作的时候也都是用这个的
 前端开发前端开发我现在主要用的vim 这个东西 ，我还没有学习太多，我感觉这个东西学习起来还是比较慢的，但是我还是慢慢的用吧，平时多用一点，最后还是会成一个比较牛的人的
 写日志写博客主要用的是hexo 来写的日志，并在github上显">
-
-
-
-<script type="text/javascript" id="hexo.configuration">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    scheme: 'Muse',
-    sidebar: {"position":"left","display":"post"},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: 0,
-      author: 'Author'
-    }
-  };
-</script>
-
-
-
-
-  <link rel="canonical" href="blog-linzi.cn/2016/08/03/linux系统的备份与还原/"/>
-
-  <title> linux系统的备份与还原 | blog-linzi </title>
+  
+    <link rel="alternate" href="/atom.xml" title="blog-linzi" type="application/atom+xml">
+  
+  
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="">
-
-  
-
-
-
-
-
-
-
-
-
-
-  
-  
-    
-  
-
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
-
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">blog-linzi</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+<body>
+  <div class="wrapper">
+    <header id="header">
+  <div class="title">
+    <h1><a href="/">blog-linzi</a></h1>
+    <p><a href="/">Record the past,enjoy life!</a></p>
   </div>
-  <p class="site-subtitle">Record the past,enjoy life!</p>
-</div>
-
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
+  <nav class="nav">
+    <ul>
       
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Startseite
-          </a>
-        </li>
+        <li><a href="/">Home</a></li>
       
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archiv
-          </a>
-        </li>
+        <li><a href="/archives">Archives</a></li>
       
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            Tags
-          </a>
-        </li>
       
-
+        <li><a href="/atom.xml">RSS</a></li>
       
     </ul>
-  
-
-  
-</nav>
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+    <div class="content"><article class="post">
+  <header>
     
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
+      <div class="icon"></div>
+      <a href="/2016/08/03/linux系统的备份与还原/">
+  <time datetime="2016-08-03T15:14:43.000Z">
+    2016-08-03
+  </time>
+</a>
     
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                linux系统的备份与还原
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-08-03T23:14:43+08:00" content="2016-08-03">
-              2016-08-03
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
     
+  
+    <h1 class="title">linux系统的备份与还原</h1>
+  
 
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p>[TOC] </p>
+  </header>
+  
+  <div class="entry">
+    
+      <p>[TOC] </p>
 <h3 id="linux平时的使用"><a href="#linux平时的使用" class="headerlink" title="linux平时的使用"></a>linux平时的使用</h3><p>我用linux 平时都用来干什么了呢？</p>
 <h4 id="java开发"><a href="#java开发" class="headerlink" title="java开发"></a>java开发</h4><p>我在linux主要用的是idea这个做的开发工具，平时工作的时候也都是用这个的</p>
 <h4 id="前端开发"><a href="#前端开发" class="headerlink" title="前端开发"></a>前端开发</h4><p>前端开发我现在主要用的vim 这个东西 ，我还没有学习太多，我感觉这个东西学习起来还是比较慢的，但是我还是慢慢的用吧，平时多用一点，最后还是会成一个比较牛的人的</p>
@@ -299,282 +101,49 @@ java开发我在linux主要用的是idea这个做的开发工具，平时工作�
 <h3 id="linux-系统备份是怎么备份的"><a href="#linux-系统备份是怎么备份的" class="headerlink" title="linux 系统备份是怎么备份的"></a>linux 系统备份是怎么备份的</h3><p>系统的备份的命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd /</div><div class="line">sudo tar cvpzf backup.tgz --exclude=/proc --exclude=/mnt --exclude=/sys --exclude=/backup.tgz /</div></pre></td></tr></table></figure></p>
 <p>系统的还原<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar xvpfz backup.tgz -C /</div></pre></td></tr></table></figure></p>
 
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/linux/" rel="tag">#linux</a>
-          
-        </div>
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/06/12/csdn/Arch linux 的安装/" rel="next" title="Arch linux 的安装">
-                <i class="fa fa-chevron-left"></i> Arch linux 的安装
-              </a>
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/04/test/" rel="prev" title="test">
-                test <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-  <div class="comments" id="comments">
     
   </div>
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <footer>
+    
+      
+      
+  <div class="tags">
+    <a class="tags-link" href="/tags/linux/">linux</a>
   </div>
 
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
 
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Inhaltsverzeichnis
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            Übersicht
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel ">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="linzi" />
-          <p class="site-author-name" itemprop="name">linzi</p>
-          <p class="site-description motion-element" itemprop="description"></p>
-        </div>
-        <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">17</span>
-              <span class="site-state-item-name">Artikel</span>
-            </a>
-          </div>
-
-          
-
-          
-            <div class="site-state-item site-state-tags">
-              <a href="/tags">
-                <span class="site-state-item-count">8</span>
-                <span class="site-state-item-name">Tags</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-        </div>
-
-        
-        
-
-        
-        
-
-      </section>
-
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            
-              
-            
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#linux平时的使用"><span class="nav-number">1.</span> <span class="nav-text">linux平时的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#java开发"><span class="nav-number">1.1.</span> <span class="nav-text">java开发</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#前端开发"><span class="nav-number">1.2.</span> <span class="nav-text">前端开发</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#写日志写博客"><span class="nav-number">1.3.</span> <span class="nav-text">写日志写博客</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#主要是想学点C-语言的东西"><span class="nav-number">1.4.</span> <span class="nav-text">主要是想学点C 语言的东西</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#服务器这东西，我还是比较喜欢的"><span class="nav-number">1.5.</span> <span class="nav-text">服务器这东西，我还是比较喜欢的</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用系统备份的重要性"><span class="nav-number">2.</span> <span class="nav-text">使用系统备份的重要性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linux-系统备份是怎么备份的"><span class="nav-number">3.</span> <span class="nav-text">linux 系统备份是怎么备份的</span></a></li></ol></div>
-            
-          </div>
-        </section>
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2016</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">linzi</span>
 </div>
-
-<div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
-</div>
-
-<div class="theme-info">
-  Theme -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
-
-        
-
-        
-      </div>
-    </footer>
-
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
   </div>
-
+  <footer id="footer"><div class="copyright">
   
+  &copy; 2016 <a href="/">linzi</a>
+  
+</div>
+<div class="theme-copyright">
+  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
+   | 
+  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
 
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
 </script>
-
-
-
-
-
-
-
-
-
-  
-
-
-
-  
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
-
-
-
-  
-
-
-
-  
-
-
-
-
-  
-  
-
-  
-
-  
-
-  
 
 </body>
 </html>

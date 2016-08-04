@@ -1,90 +1,20 @@
-<!doctype html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion">
+<!DOCTYPE HTML>
+<html>
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  
+  <title>uefi 硬盘下windows 与linux 双系时改变引导首选项为linux | blog-linzi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <meta name="author" content="linzi">
   
   
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+    <meta name="description" content="我最近把引导模式改成了 UEFI +GPT，但是发现，改成这个之后，又装了双系统，windows 8.1 +fedora 但是我想把fedora 改为第一启动项，上网上搜了一下，有个easyUEFI的工具可以管理，也有linux 但是使用之后发现，没有我想要的效果，我还是自已来吧，//使windows 启动项启效
 
-
-
-
+我用fedora 在ESP分区中修改ms文件夹中的文件名//     在fedor">
   
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
-
-
-
-
-
-
-<meta name="description" content="我最近把引导模式改成了 UEFI +GPT，但是发现，改成这个之后，又装了双系统，windows 8.1 +fedora 但是我想把fedora 改为第一启动项，上网上搜了一下，有个easyUEFI的工具可以管理，也有linux 但是使用之后发现，没有我想要的效果，我还是自已来吧，//使windows 启动项启效
+  <meta name="description" content="我最近把引导模式改成了 UEFI +GPT，但是发现，改成这个之后，又装了双系统，windows 8.1 +fedora 但是我想把fedora 改为第一启动项，上网上搜了一下，有个easyUEFI的工具可以管理，也有linux 但是使用之后发现，没有我想要的效果，我还是自已来吧，//使windows 启动项启效
 
 我用fedora 在ESP分区中修改ms文件夹中的文件名//     在fedor">
 <meta property="og:type" content="article">
@@ -100,460 +30,103 @@
 <meta name="twitter:description" content="我最近把引导模式改成了 UEFI +GPT，但是发现，改成这个之后，又装了双系统，windows 8.1 +fedora 但是我想把fedora 改为第一启动项，上网上搜了一下，有个easyUEFI的工具可以管理，也有linux 但是使用之后发现，没有我想要的效果，我还是自已来吧，//使windows 启动项启效
 
 我用fedora 在ESP分区中修改ms文件夹中的文件名//     在fedor">
-
-
-
-<script type="text/javascript" id="hexo.configuration">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    scheme: 'Muse',
-    sidebar: {"position":"left","display":"post"},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: 0,
-      author: 'Author'
-    }
-  };
-</script>
-
-
-
-
-  <link rel="canonical" href="blog-linzi.cn/2015/02/04/csdn/uefi硬盘下windows与linux 双系时改变引导首选项为linux/"/>
-
-  <title> uefi 硬盘下windows 与linux 双系时改变引导首选项为linux | blog-linzi </title>
+  
+    <link rel="alternate" href="/atom.xml" title="blog-linzi" type="application/atom+xml">
+  
+  
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="">
-
-  
-
-
-
-
-
-
-
-
-
-
-  
-  
-    
-  
-
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
-
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">blog-linzi</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+<body>
+  <div class="wrapper">
+    <header id="header">
+  <div class="title">
+    <h1><a href="/">blog-linzi</a></h1>
+    <p><a href="/">Record the past,enjoy life!</a></p>
   </div>
-  <p class="site-subtitle">Record the past,enjoy life!</p>
-</div>
-
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
+  <nav class="nav">
+    <ul>
       
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Startseite
-          </a>
-        </li>
+        <li><a href="/">Home</a></li>
       
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archiv
-          </a>
-        </li>
+        <li><a href="/archives">Archives</a></li>
       
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            Tags
-          </a>
-        </li>
       
-
+        <li><a href="/atom.xml">RSS</a></li>
       
     </ul>
-  
-
-  
-</nav>
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+    <div class="content"><article class="post">
+  <header>
     
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
+      <div class="icon"></div>
+      <a href="/2015/02/04/csdn/uefi硬盘下windows与linux 双系时改变引导首选项为linux/">
+  <time datetime="2015-02-04T02:51:11.000Z">
+    2015-02-04
+  </time>
+</a>
     
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                uefi 硬盘下windows 与linux 双系时改变引导首选项为linux
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2015-02-04T10:51:11+08:00" content="2015-02-04">
-              2015-02-04
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
     
+  
+    <h1 class="title">uefi 硬盘下windows 与linux 双系时改变引导首选项为linux</h1>
+  
 
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p>我最近把引导模式改成了 UEFI +GPT，但是发现，改成这个之后，又装了双系统，<br>windows 8.1 +fedora 但是我想把fedora 改为第一启动项，上网上搜了一下，<br>有个easyUEFI的工具可以管理，也有linux 但是使用之后发现，没有我想要的效果，<br>我还是自已来吧，<br>//使windows 启动项启效</p>
+  </header>
+  
+  <div class="entry">
+    
+      <p>我最近把引导模式改成了 UEFI +GPT，但是发现，改成这个之后，又装了双系统，<br>windows 8.1 +fedora 但是我想把fedora 改为第一启动项，上网上搜了一下，<br>有个easyUEFI的工具可以管理，也有linux 但是使用之后发现，没有我想要的效果，<br>我还是自已来吧，<br>//使windows 启动项启效</p>
 <ol>
 <li>我用fedora 在ESP分区中修改ms文件夹中的文件名<br>//     在fedora的引导 中建立windows 引导</li>
 <li>因为我的fedora的启动引导中有windows的引导项，<br>但是那是以前的文件的位置，我们要手动的改一下，<br>//    改变linux 下的GRUB的引导下的windows 的引导的位置<br>3 .     vi /boot/grub/grub.conf<br>我的是把ms 下的Boot 文件夹名改为了 Boot2 那么我们把引导的位置改为Boot2 就好了，<br>重启： windows 正常引导</li>
 </ol>
 
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/03/04/teach/javaWebOutLine/" rel="prev" title="课程大纲">
-                课程大纲 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-  <div class="comments" id="comments">
     
   </div>
+  <footer>
+    
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
 
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+</div>
   </div>
-
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Inhaltsverzeichnis
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            Übersicht
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel ">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="linzi" />
-          <p class="site-author-name" itemprop="name">linzi</p>
-          <p class="site-description motion-element" itemprop="description"></p>
-        </div>
-        <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">17</span>
-              <span class="site-state-item-name">Artikel</span>
-            </a>
-          </div>
-
-          
-
-          
-            <div class="site-state-item site-state-tags">
-              <a href="/tags">
-                <span class="site-state-item-count">8</span>
-                <span class="site-state-item-name">Tags</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-        </div>
-
-        
-        
-
-        
-        
-
-      </section>
-
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            
-              
-            
-            
-              <p class="post-toc-empty">Dieser Artikel hat kein Inhaltsverzeichnis</p>
-            
-          </div>
-        </section>
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
+  <footer id="footer"><div class="copyright">
   
-  &copy; 
-  <span itemprop="copyrightYear">2016</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">linzi</span>
-</div>
-
-<div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
-</div>
-
-<div class="theme-info">
-  Theme -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
-
-        
-
-        
-      </div>
-    </footer>
-
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
-  </div>
-
+  &copy; 2016 <a href="/">linzi</a>
   
+</div>
+<div class="theme-copyright">
+  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
+   | 
+  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
 
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
 </script>
-
-
-
-
-
-
-
-
-
-  
-
-
-
-  
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
-
-
-
-  
-
-
-
-  
-
-
-
-
-  
-  
-
-  
-
-  
-
-  
 
 </body>
 </html>
