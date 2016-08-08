@@ -59,6 +59,80 @@
   <header>
     
       <div class="icon"></div>
+      <a href="/2015/08/04/csdn/javascript中的数据类型的问题/">
+  <time datetime="2015-08-04T02:51:11.000Z">
+    2015-08-04
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title"><a href="/2015/08/04/csdn/javascript中的数据类型的问题/">javascript中的数据类型的问题</a></h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <h1 id="undefined-与null"><a href="#undefined-与null" class="headerlink" title="undefined 与null"></a>undefined 与null</h1><p>如果用alert(undefined==null)，这个一定是打印的是true ，因为他两个都是空的,当用alert(undefined===null);的时候，就不false了，为什么呢？因为这两个值的类型是不同的，alert(undefined);=undefined，而alert(null);=object 这时候，就能看出这两个东西有什么不同了。<br>可以参看 <a href="http://www.ruanyifeng.com/blog/2014/03/undefined-vs-null.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2014/03/undefined-vs-null.html</a></p>
+<h1 id="NaN"><a href="#NaN" class="headerlink" title="NaN"></a>NaN</h1><p>NaN 属性是代表非数字值的特殊值。该属性用于指示某个值不是数字。可以把 Number 对象设置为该值，来指示其不是数字值。<br>提示：使用 isNaN() 全局函数来判断一个值是否是 NaN 值。<br>例如 ：alert(Number.NaN); //NaN<br>alert(NaN+1);    //NaN<br>alert(NaN==NaN);//false<br>这里可以看出来，它自己是不与自己相等的，更不要说别的东西了，也就是说，他谁都不等<br>alert(isNaN(25)) //false<br>alert(isNaN(“25”))//false 这个是自己会转成数字<br>alert(isNaN(“lee”))//true<br>alert(isNaN(true))//false 转成了1<br>alert(isNaN(false )) //false 转成0<br>alert(isNaN(NaN)) //true</p>
+<p>isNaN()函数也适用于对象，在调用isNaN()函数过程中，首先会调用valueOf()方法，然后确定返回值是否转换成数值，如果不能，则基于这个返回值再调用toString()方法，再测试返回值</p>
+<h1 id="parseInt"><a href="#parseInt" class="headerlink" title="parseInt()"></a>parseInt()</h1><p>parseInt(); 只会从第一位起，到不为数值的字符串为止，也支持16进制与8进制,2进制的字符串，当然这里我们是要传入参数的，<br>parseInt(“0xae”,16);<br>parseFloat() 是不认识16进制的</p>
+
+    
+  </div>
+  <footer class="end-sep">
+    
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+  
+    <article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2015/08/04/csdn/Windows 端的makedown 编辑器 haroopad/">
+  <time datetime="2015-08-04T02:51:11.000Z">
+    2015-08-04
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title"><a href="/2015/08/04/csdn/Windows 端的makedown 编辑器 haroopad/">javascript中的数据类型的问题</a></h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <h1 id="undefined-与null"><a href="#undefined-与null" class="headerlink" title="undefined 与null"></a>undefined 与null</h1><p>如果用alert(undefined==null)，这个一定是打印的是true ，因为他两个都是空的,当用alert(undefined===null);的时候，就不false了，为什么呢？因为这两个值的类型是不同的，alert(undefined);=undefined，而alert(null);=object 这时候，就能看出这两个东西有什么不同了。<br>可以参看 <a href="http://www.ruanyifeng.com/blog/2014/03/undefined-vs-null.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2014/03/undefined-vs-null.html</a></p>
+<h1 id="NaN"><a href="#NaN" class="headerlink" title="NaN"></a>NaN</h1><p>NaN 属性是代表非数字值的特殊值。该属性用于指示某个值不是数字。可以把 Number 对象设置为该值，来指示其不是数字值。<br>提示：使用 isNaN() 全局函数来判断一个值是否是 NaN 值。<br>例如 ：alert(Number.NaN); //NaN<br>alert(NaN+1);    //NaN<br>alert(NaN==NaN);//false<br>这里可以看出来，它自己是不与自己相等的，更不要说别的东西了，也就是说，他谁都不等<br>alert(isNaN(25)) //false<br>alert(isNaN(“25”))//false 这个是自己会转成数字<br>alert(isNaN(“lee”))//true<br>alert(isNaN(true))//false 转成了1<br>alert(isNaN(false )) //false 转成0<br>alert(isNaN(NaN)) //true</p>
+<p>isNaN()函数也适用于对象，在调用isNaN()函数过程中，首先会调用valueOf()方法，然后确定返回值是否转换成数值，如果不能，则基于这个返回值再调用toString()方法，再测试返回值</p>
+<h1 id="parseInt"><a href="#parseInt" class="headerlink" title="parseInt()"></a>parseInt()</h1><p>parseInt(); 只会从第一位起，到不为数值的字符串为止，也支持16进制与8进制,2进制的字符串，当然这里我们是要传入参数的，<br>parseInt(“0xae”,16);<br>parseFloat() 是不认识16进制的</p>
+
+    
+  </div>
+  <footer class="end-sep">
+    
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+  
+    <article class="post">
+  <header>
+    
+      <div class="icon"></div>
       <a href="/2015/06/04/csdn/jquery 时期选择插件-jedate/">
   <time datetime="2015-06-04T02:51:11.000Z">
     2015-06-04
@@ -163,40 +237,6 @@ jeDate({
   <header>
     
       <div class="icon"></div>
-      <a href="/2015/05/04/csdn/javascript中的货币格式化/">
-  <time datetime="2015-05-04T02:51:11.000Z">
-    2015-05-04
-  </time>
-</a>
-    
-    
-  
-    <h1 class="title"><a href="/2015/05/04/csdn/javascript中的货币格式化/">javascript 中的货币格式化</a></h1>
-  
-
-  </header>
-  
-  <div class="entry">
-    
-      <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    function cc(s)&#123;</div><div class="line">        if(/[^0-9\.]/.test(s)) return &quot;invalid value&quot;;</div><div class="line">        s=s.replace(/^(\d*)$/,&quot;$1.&quot;);</div><div class="line">        s=(s+&quot;00&quot;).replace(/(\d*\.\d\d)\d*/,&quot;$1&quot;);</div><div class="line">        s=s.replace(&quot;.&quot;,&quot;,&quot;);</div><div class="line">        var re=/(\d)(\d&#123;3&#125;,)/;</div><div class="line">        while(re.test(s))</div><div class="line">            s=s.replace(re,&quot;$1,$2&quot;);</div><div class="line">        s=s.replace(/,(\d\d)$/,&quot;.$1&quot;);</div><div class="line">        return &quot;￥&quot; + s.replace(/^\./,&quot;0.&quot;)</div><div class="line">    &#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;input onchange=&quot;this.value=cc(this.value)&quot;&gt;</div></pre></td></tr></table></figure>
-
-    
-  </div>
-  <footer class="end-sep">
-    
-      
-      
-    
-    <div class="clearfix"></div>
-  </footer>
-</article>
-
-
-  
-    <article class="post">
-  <header>
-    
-      <div class="icon"></div>
       <a href="/2015/05/04/csdn/快逸报表（润乾报表使用）（v4 版本）/">
   <time datetime="2015-05-04T02:51:11.000Z">
     2015-05-04
@@ -225,6 +265,40 @@ jeDate({
 </code></pre><h6 id="宏定义"><a href="#宏定义" class="headerlink" title="宏定义"></a>宏定义</h6><pre><code>应用场景 ： 我们有的时候要用到报表的列的排序，可有的时候我们并用不到这个排序，那么我们就用到了这个宏定义了，其实我感觉宏定义就是把我们用到的Sql 用字符串的方式拼接给了sql 我们用到了，就把这个要拼接的sql 传给我们的动态的宏，这时候我们就可以方便自由的使用我们的报表了！
 </code></pre><h6 id="说一下这个报表的美化吧"><a href="#说一下这个报表的美化吧" class="headerlink" title="说一下这个报表的美化吧"></a>说一下这个报表的美化吧</h6><pre><code>我们公司用的是比较老的版本的，可是我们做报表的要把这个东西放给医院用的，不漂亮，这个说不过去吧，那么我也就一个简单的方法，也是一个偷懒的方法吧，我用了一个bootStrap ，来做的表格的美化，这里说一下，这个表格的内容的id 是跟润乾标签中name是一个的。这个比较坑的是，表头跟表的内容是放到了两个table 中！
 </code></pre>
+    
+  </div>
+  <footer class="end-sep">
+    
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+  
+    <article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2015/05/04/csdn/javascript中的货币格式化/">
+  <time datetime="2015-05-04T02:51:11.000Z">
+    2015-05-04
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title"><a href="/2015/05/04/csdn/javascript中的货币格式化/">javascript 中的货币格式化</a></h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    function cc(s)&#123;</div><div class="line">        if(/[^0-9\.]/.test(s)) return &quot;invalid value&quot;;</div><div class="line">        s=s.replace(/^(\d*)$/,&quot;$1.&quot;);</div><div class="line">        s=(s+&quot;00&quot;).replace(/(\d*\.\d\d)\d*/,&quot;$1&quot;);</div><div class="line">        s=s.replace(&quot;.&quot;,&quot;,&quot;);</div><div class="line">        var re=/(\d)(\d&#123;3&#125;,)/;</div><div class="line">        while(re.test(s))</div><div class="line">            s=s.replace(re,&quot;$1,$2&quot;);</div><div class="line">        s=s.replace(/,(\d\d)$/,&quot;.$1&quot;);</div><div class="line">        return &quot;￥&quot; + s.replace(/^\./,&quot;0.&quot;)</div><div class="line">    &#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;input onchange=&quot;this.value=cc(this.value)&quot;&gt;</div></pre></td></tr></table></figure>
+
     
   </div>
   <footer class="end-sep">
