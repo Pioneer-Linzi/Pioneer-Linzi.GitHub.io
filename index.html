@@ -59,6 +59,78 @@
   <header>
     
       <div class="icon"></div>
+      <a href="/2016/08/18/ubuntu安装maven/">
+  <time datetime="2016-08-18T07:56:50.000Z">
+    2016-08-18
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title"><a href="/2016/08/18/ubuntu安装maven/">ubuntu安装maven</a></h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <p>[OTC]</p>
+<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>前提就是你已经安装好了java,and add JAVA_HOME to path;</p>
+<h2 id="下载maven"><a href="#下载maven" class="headerlink" title="下载maven"></a>下载maven</h2><p>you can down maven from apache site ,</p>
+<h2 id="这个时候你会发现，哪里要这个难-·"><a href="#这个时候你会发现，哪里要这个难-·" class="headerlink" title="这个时候你会发现，哪里要这个难 ·"></a>这个时候你会发现，哪里要这个难 ·</h2><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install maven</div></pre></td></tr></table></figure>
+
+ok this all 
+</code></pre>
+    
+  </div>
+  <footer class="end-sep">
+    
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+  
+    <article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2016/08/18/redis学习/">
+  <time datetime="2016-08-18T07:26:59.000Z">
+    2016-08-18
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title"><a href="/2016/08/18/redis学习/">redis学习</a></h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      
+    
+  </div>
+  <footer class="end-sep">
+    
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+  
+    <article class="post">
+  <header>
+    
+      <div class="icon"></div>
       <a href="/2016/08/08/web/js/angular/angular-学习/">
   <time datetime="2016-08-08T13:40:21.000Z">
     2016-08-08
@@ -75,6 +147,41 @@
   <div class="entry">
     
       
+    
+  </div>
+  <footer class="end-sep">
+    
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+  
+    <article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2016/08/05/javaweb/项目中的动态数据源/">
+  <time datetime="2016-08-05T02:41:04.000Z">
+    2016-08-05
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title"><a href="/2016/08/05/javaweb/项目中的动态数据源/">项目中的动态数据源</a></h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <h3 id="平时项目中遇到的问题"><a href="#平时项目中遇到的问题" class="headerlink" title="平时项目中遇到的问题"></a>平时项目中遇到的问题</h3><h4 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h4><p>项目中要用到sql来查询，就是写一些类似一数据库的图形化界面的查询，但是我一个界面同时会有多少数据源的sql 那这就问题来了，我们这边就要去动态的切换数据源了，那以前我写过一个用hibernate 的动态的切换数据源的方法，但那个切换数据源是可以，但是也要同时的去切换不同的方言，也就是不同的sessoinFactory,但是因为项目中的原来的框架的搭建的原因，我们这边用不了我们这边的动态的切换sessionFactory的方法 ，但是是可以实现的，那我们为什么不能用更直接的方法呢？</p>
+<h4 id="解决问题的思路"><a href="#解决问题的思路" class="headerlink" title="解决问题的思路"></a>解决问题的思路</h4><p>这里我们由原来的hibernate 的切换数据源的方式改为用jdbc的连接方式，那我们这直接用jdbc的方式的话，那连接的方式就太慢了，那我要选一个数据源的连接池吧，我们常用的数据源的连接池有c3po 与 dbcp 那，我们这边不再做对比 ，我们直接选用的是dbcp 那，我们怎么来做这个动态的切换呢，你要是说用到了就new 一个，那你这个也太笨了吧，那我们这边用到的是我们把数据源的连接的配置信息放到我们的一个主数据库中，用一个表来维护这个多个数据源的配置信息，当我们要用到什么数据源，那我们就去数据库中去找，去设置这个数据源，那这个也太行了，跟jdbc 没有什么区别了，那把新建出来的数据源的连接池存到一个Map中，当然这个Map是一个全局的静态的，那这样就可以了，ok有了思路，那这里就是写代码了，那就开始吧！</p>
+
     
   </div>
   <footer class="end-sep">
@@ -125,41 +232,6 @@
 <p> 5.测试<br>打开一个终端，输入下面命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java -version</div></pre></td></tr></table></figure></p>
 <p>显示结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">java version &quot;1.7.0_05&quot; Java(TM) SE Runtime Environment (build 1.7.0_05-b05) </div><div class="line">Java HotSpot(TM) Server VM (build 23.1-b03, mixed mode)</div></pre></td></tr></table></figure></p>
 <p>这表示java命令已经可以运行了。</p>
-
-    
-  </div>
-  <footer class="end-sep">
-    
-      
-      
-    
-    <div class="clearfix"></div>
-  </footer>
-</article>
-
-
-  
-    <article class="post">
-  <header>
-    
-      <div class="icon"></div>
-      <a href="/2016/08/05/javaweb/项目中的动态数据源/">
-  <time datetime="2016-08-05T02:41:04.000Z">
-    2016-08-05
-  </time>
-</a>
-    
-    
-  
-    <h1 class="title"><a href="/2016/08/05/javaweb/项目中的动态数据源/">项目中的动态数据源</a></h1>
-  
-
-  </header>
-  
-  <div class="entry">
-    
-      <h3 id="平时项目中遇到的问题"><a href="#平时项目中遇到的问题" class="headerlink" title="平时项目中遇到的问题"></a>平时项目中遇到的问题</h3><h4 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h4><p>项目中要用到sql来查询，就是写一些类似一数据库的图形化界面的查询，但是我一个界面同时会有多少数据源的sql 那这就问题来了，我们这边就要去动态的切换数据源了，那以前我写过一个用hibernate 的动态的切换数据源的方法，但那个切换数据源是可以，但是也要同时的去切换不同的方言，也就是不同的sessoinFactory,但是因为项目中的原来的框架的搭建的原因，我们这边用不了我们这边的动态的切换sessionFactory的方法 ，但是是可以实现的，那我们为什么不能用更直接的方法呢？</p>
-<h4 id="解决问题的思路"><a href="#解决问题的思路" class="headerlink" title="解决问题的思路"></a>解决问题的思路</h4><p>这里我们由原来的hibernate 的切换数据源的方式改为用jdbc的连接方式，那我们这直接用jdbc的方式的话，那连接的方式就太慢了，那我要选一个数据源的连接池吧，我们常用的数据源的连接池有c3po 与 dbcp 那，我们这边不再做对比 ，我们直接选用的是dbcp 那，我们怎么来做这个动态的切换呢，你要是说用到了就new 一个，那你这个也太笨了吧，那我们这边用到的是我们把数据源的连接的配置信息放到我们的一个主数据库中，用一个表来维护这个多个数据源的配置信息，当我们要用到什么数据源，那我们就去数据库中去找，去设置这个数据源，那这个也太行了，跟jdbc 没有什么区别了，那把新建出来的数据源的连接池存到一个Map中，当然这个Map是一个全局的静态的，那这样就可以了，ok有了思路，那这里就是写代码了，那就开始吧！</p>
 
     
   </div>
@@ -276,85 +348,6 @@
   <header>
     
       <div class="icon"></div>
-      <a href="/2016/06/12/csdn/Hibernate get和load区别/">
-  <time datetime="2016-06-12T02:51:11.000Z">
-    2016-06-12
-  </time>
-</a>
-    
-    
-  
-    <h1 class="title"><a href="/2016/06/12/csdn/Hibernate get和load区别/">Hibernate get和load区别</a></h1>
-  
-
-  </header>
-  
-  <div class="entry">
-    
-      <p>get和load方式是根据id取得一个记录<br>下边详细说一下get和load的不同，因为有些时候为了对比也会把find加进来。</p>
-<p>1.从返回结果上对比：<br>load方式检索不到的话会抛出org.hibernate.ObjectNotFoundException异常<br>get方法检索不到的话会返回null</p>
-<p>2.从检索执行机制上对比： get方法和find方法都是直接从数据库中检索 而load方法的执行则比较复杂首先查找session的persistent Context中是否有缓存，如果有则直接返回 如果没有则判断是否是lazy，如果不是直接访问数据库检索，查到记录返回，查不到抛出异常 如果是lazy则需要建立代理对象，对象的initialized属性为false，target属性为null 在访问获得的代理对象的属性时,检索数据库，如果找到记录则把该记录的对象复制到代理对象的target上，并将initialized=true，如果找不到就抛出异常。</p>
-<p>3.根本区别说明<br>如果你使用load方法，hibernate认为该id对应的对象（数据库记录）在数据库中是一定存在的，所以它可以放心的使用，它可以放心的使用代理来 延迟加载该对象。在用到对象中的其他属性数据时才查询数据库，但是万一数据库中不存在该记录，那没办法，只能抛异常。所说的load方法抛异常是指在使用 该对象的数据时，数据库中不存在该数据时抛异常，而不是在创建这个对象时(注意：这就是由于“延迟加载”在作怪)。</p>
-<p>由于session中的缓存对于hibernate来说是个相当廉价的资源，所以在load时会先查一下session缓存看看该id对应的对象是否存在，不存在则创建代理。所以如果你知道该id在数据库中一定有对应记录存在就可以使用load方法来实现延迟加载。</p>
-<p>对于get方法，hibernate会确认一下该id对应的数据是否存在，首先在session缓存中查找，然后在二级缓存中查找，还没有就查数据库，数据库中没有就返回null。</p>
-<p>对于load和get方法返回类型：虽然好多书中都这么说：“get()永远只返回实体类”，但实际上这是不正确的，get方法如果在 session缓存中找到了该id对应的对象，如果刚好该对象前面是被代理过的，如被load方法使用过，或者被其他关联对象延迟加载过，那么返回的还是 原先的代理对象，而不是实体类对象，如果该代理对象还没有加载实体数据（就是id以外的其他属性数据），那么它会查询二级缓存或者数据库来加载数据，但是 返回的还是代理对象，只不过已经加载了实体数据。</p>
-<p>get方法首先查询session缓存，没有的话查询二级缓存，最后查询数据库；反而load方法创建时首先查询session缓存，没有就创建代理，实际使用数据时才查询二级缓存和数据库。</p>
-<p>4.简单总结</p>
-<p>总之对于get和load的根本区别，一句话，hibernate对于load方法认为该数据在数据库中一定存在，可以放心的使用代理来延迟加载，如果在使用过程中发现了问题，只能抛异常；而对于get方法，hibernate一定要获取到真实的数据，否则返回null。</p>
-
-    
-  </div>
-  <footer class="end-sep">
-    
-      
-      
-    
-    <div class="clearfix"></div>
-  </footer>
-</article>
-
-
-  
-    <article class="post">
-  <header>
-    
-      <div class="icon"></div>
-      <a href="/2016/06/12/csdn/hibernate 中的方言与数据库中的数据类型不对应问题/">
-  <time datetime="2016-06-12T02:51:11.000Z">
-    2016-06-12
-  </time>
-</a>
-    
-    
-  
-    <h1 class="title"><a href="/2016/06/12/csdn/hibernate 中的方言与数据库中的数据类型不对应问题/">hibernate 中的方言与数据库中的数据类型不对应问题</a></h1>
-  
-
-  </header>
-  
-  <div class="entry">
-    
-      <p>有时候会遇到 hibernate  no mapping Dialect type -9 之类的，这个就是方言与数据库中的数据类型不对应问题 ，那先说一下解决思路</p>
-<h2 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h2><p>－ 换方言<br>－数据库中表类型换了<br>－继承hibernate 中的方言，重写hibernate 的数据类型对应关系<br>在第一个方法不可以的情况下，第二个显然是最好的解决方法!<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">import org.hibernate.dialect.SQLServerDialect;</div><div class="line"></div><div class="line">/**</div><div class="line"> * 自定义方言的类，用于解决hibernate中方言与数据库不类型不对的问题</div><div class="line"> */</div><div class="line"></div><div class="line">public class SqlServer2008Dialect extends SQLServerDialect &#123;</div><div class="line"></div><div class="line">    public SqlServer2008Dialect() &#123;</div><div class="line">        super();</div><div class="line">        registerHibernateType(1, &quot;string&quot;);</div><div class="line">        registerHibernateType(-9, &quot;string&quot;);</div><div class="line">        registerHibernateType(-16, &quot;string&quot;);</div><div class="line">        registerHibernateType(3, &quot;double&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>最后在改写一下hibernate 中方言类的配置就可以了!</p>
-
-    
-  </div>
-  <footer class="end-sep">
-    
-      
-      
-    
-    <div class="clearfix"></div>
-  </footer>
-</article>
-
-
-  
-    <article class="post">
-  <header>
-    
-      <div class="icon"></div>
       <a href="/2016/06/12/csdn/hibernate 调用存储过程/">
   <time datetime="2016-06-12T02:51:11.000Z">
     2016-06-12
@@ -431,7 +424,7 @@
   <header>
     
       <div class="icon"></div>
-      <a href="/2016/06/12/csdn/arch linux中的jdk的安装/">
+      <a href="/2016/06/12/csdn/hibernate 中的方言与数据库中的数据类型不对应问题/">
   <time datetime="2016-06-12T02:51:11.000Z">
     2016-06-12
   </time>
@@ -439,16 +432,16 @@
     
     
   
-    <h1 class="title"><a href="/2016/06/12/csdn/arch linux中的jdk的安装/">arch linux中的jdk的安装</a></h1>
+    <h1 class="title"><a href="/2016/06/12/csdn/hibernate 中的方言与数据库中的数据类型不对应问题/">hibernate 中的方言与数据库中的数据类型不对应问题</a></h1>
   
 
   </header>
   
   <div class="entry">
     
-      <p>编辑/etc/pacman.conf, 在文件末尾添加以下内容(操作前请做好相应备份)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[archlinuxcn]</div><div class="line">SigLevel = Optional TrustedOnly</div><div class="line">Server = http://mirrors.163.com/archlinux-cn/$arch</div></pre></td></tr></table></figure></p>
-<p>之后安装 archlinuxcn-keyring 包导入 GPG key 从甲骨文的官网<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pacman -S jdk</div></pre></td></tr></table></figure></p>
-<p>this all<br>thanks</p>
+      <p>有时候会遇到 hibernate  no mapping Dialect type -9 之类的，这个就是方言与数据库中的数据类型不对应问题 ，那先说一下解决思路</p>
+<h2 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h2><p>－ 换方言<br>－数据库中表类型换了<br>－继承hibernate 中的方言，重写hibernate 的数据类型对应关系<br>在第一个方法不可以的情况下，第二个显然是最好的解决方法!<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">import org.hibernate.dialect.SQLServerDialect;</div><div class="line"></div><div class="line">/**</div><div class="line"> * 自定义方言的类，用于解决hibernate中方言与数据库不类型不对的问题</div><div class="line"> */</div><div class="line"></div><div class="line">public class SqlServer2008Dialect extends SQLServerDialect &#123;</div><div class="line"></div><div class="line">    public SqlServer2008Dialect() &#123;</div><div class="line">        super();</div><div class="line">        registerHibernateType(1, &quot;string&quot;);</div><div class="line">        registerHibernateType(-9, &quot;string&quot;);</div><div class="line">        registerHibernateType(-16, &quot;string&quot;);</div><div class="line">        registerHibernateType(3, &quot;double&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>最后在改写一下hibernate 中方言类的配置就可以了!</p>
 
     
   </div>

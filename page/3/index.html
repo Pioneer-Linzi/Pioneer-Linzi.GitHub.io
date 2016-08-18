@@ -4,26 +4,18 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   
-  <title>html 中 table 的练习 关于合并单元格 | blog-linzi</title>
+  <title>blog-linzi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   
     <meta name="author" content="linzi">
   
   
-    <meta name="description" content="![样式](http://img.blog.csdn.net/20150327085120424)50327085035758)">
-  
-  <meta name="description" content="![样式](http://img.blog.csdn.net/20150327085120424)50327085035758)">
-<meta property="og:type" content="article">
-<meta property="og:title" content="html 中 table 的练习 关于合并单元格">
-<meta property="og:url" content="blog-linzi.cn/2015/03/04/csdn/html合并单元格/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="blog-linzi">
+<meta property="og:url" content="blog-linzi.cn/page/3/index.html">
 <meta property="og:site_name" content="blog-linzi">
-<meta property="og:description" content="![样式](http://img.blog.csdn.net/20150327085120424)50327085035758)">
-<meta property="og:image" content="http://img.blog.csdn.net/20150327085313696">
-<meta property="og:updated_time" content="2016-08-03T14:33:54.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="html 中 table 的练习 关于合并单元格">
-<meta name="twitter:description" content="![样式](http://img.blog.csdn.net/20150327085120424)50327085035758)">
-<meta name="twitter:image" content="http://img.blog.csdn.net/20150327085313696">
+<meta name="twitter:title" content="blog-linzi">
   
     <link rel="alternate" href="/atom.xml" title="blog-linzi" type="application/atom+xml">
   
@@ -57,41 +49,58 @@
   </nav>
   <div class="clearfix"></div>
 </header>
-    <div class="content"><article class="post">
+    <div class="content">
+
+
+
+
+  
+    <article class="post">
   <header>
     
       <div class="icon"></div>
-      <a href="/2015/03/04/csdn/html合并单元格/">
-  <time datetime="2015-03-04T02:51:11.000Z">
-    2015-03-04
+      <a href="/2015/02/04/csdn/uefi硬盘下windows与linux 双系时改变引导首选项为linux/">
+  <time datetime="2015-02-04T02:51:11.000Z">
+    2015-02-04
   </time>
 </a>
     
     
   
-    <h1 class="title">html 中 table 的练习 关于合并单元格</h1>
+    <h1 class="title"><a href="/2015/02/04/csdn/uefi硬盘下windows与linux 双系时改变引导首选项为linux/">uefi 硬盘下windows 与linux 双系时改变引导首选项为linux</a></h1>
   
 
   </header>
   
   <div class="entry">
     
-      <p><img src="http://img.blog.csdn.net/20150327085313696" alt="code"><br>![样式]<br>(<a href="http://img.blog.csdn.net/20150327085120424)50327085035758" target="_blank" rel="external">http://img.blog.csdn.net/20150327085120424)50327085035758</a>)</p>
+      <p>我最近把引导模式改成了 UEFI +GPT，但是发现，改成这个之后，又装了双系统，<br>windows 8.1 +fedora 但是我想把fedora 改为第一启动项，上网上搜了一下，<br>有个easyUEFI的工具可以管理，也有linux 但是使用之后发现，没有我想要的效果，<br>我还是自已来吧，<br>//使windows 启动项启效</p>
+<ol>
+<li>我用fedora 在ESP分区中修改ms文件夹中的文件名<br>//     在fedora的引导 中建立windows 引导</li>
+<li>因为我的fedora的启动引导中有windows的引导项，<br>但是那是以前的文件的位置，我们要手动的改一下，<br>//    改变linux 下的GRUB的引导下的windows 的引导的位置<br>3 .     vi /boot/grub/grub.conf<br>我的是把ms 下的Boot 文件夹名改为了 Boot2 那么我们把引导的位置改为Boot2 就好了，<br>重启： windows 正常引导</li>
+</ol>
 
     
   </div>
-  <footer>
+  <footer class="end-sep">
     
       
       
-  <div class="tags">
-    <a class="tags-link" href="/tags/html5/">html5</a>
-  </div>
-
     
     <div class="clearfix"></div>
   </footer>
 </article>
+
+
+  
+
+  <nav id="pagination">
+  
+    <a href="/page/2/" class="prev">Prev</a>
+  
+  
+  <div class="clearfix"></div>
+</nav>
 
 </div>
   </div>

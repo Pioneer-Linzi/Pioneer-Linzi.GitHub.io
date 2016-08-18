@@ -59,7 +59,86 @@
   <header>
     
       <div class="icon"></div>
-      <a href="/2015/08/04/csdn/javascript中的数据类型的问题/">
+      <a href="/2016/06/12/csdn/Hibernate get和load区别/">
+  <time datetime="2016-06-12T02:51:11.000Z">
+    2016-06-12
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title"><a href="/2016/06/12/csdn/Hibernate get和load区别/">Hibernate get和load区别</a></h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <p>get和load方式是根据id取得一个记录<br>下边详细说一下get和load的不同，因为有些时候为了对比也会把find加进来。</p>
+<p>1.从返回结果上对比：<br>load方式检索不到的话会抛出org.hibernate.ObjectNotFoundException异常<br>get方法检索不到的话会返回null</p>
+<p>2.从检索执行机制上对比： get方法和find方法都是直接从数据库中检索 而load方法的执行则比较复杂首先查找session的persistent Context中是否有缓存，如果有则直接返回 如果没有则判断是否是lazy，如果不是直接访问数据库检索，查到记录返回，查不到抛出异常 如果是lazy则需要建立代理对象，对象的initialized属性为false，target属性为null 在访问获得的代理对象的属性时,检索数据库，如果找到记录则把该记录的对象复制到代理对象的target上，并将initialized=true，如果找不到就抛出异常。</p>
+<p>3.根本区别说明<br>如果你使用load方法，hibernate认为该id对应的对象（数据库记录）在数据库中是一定存在的，所以它可以放心的使用，它可以放心的使用代理来 延迟加载该对象。在用到对象中的其他属性数据时才查询数据库，但是万一数据库中不存在该记录，那没办法，只能抛异常。所说的load方法抛异常是指在使用 该对象的数据时，数据库中不存在该数据时抛异常，而不是在创建这个对象时(注意：这就是由于“延迟加载”在作怪)。</p>
+<p>由于session中的缓存对于hibernate来说是个相当廉价的资源，所以在load时会先查一下session缓存看看该id对应的对象是否存在，不存在则创建代理。所以如果你知道该id在数据库中一定有对应记录存在就可以使用load方法来实现延迟加载。</p>
+<p>对于get方法，hibernate会确认一下该id对应的数据是否存在，首先在session缓存中查找，然后在二级缓存中查找，还没有就查数据库，数据库中没有就返回null。</p>
+<p>对于load和get方法返回类型：虽然好多书中都这么说：“get()永远只返回实体类”，但实际上这是不正确的，get方法如果在 session缓存中找到了该id对应的对象，如果刚好该对象前面是被代理过的，如被load方法使用过，或者被其他关联对象延迟加载过，那么返回的还是 原先的代理对象，而不是实体类对象，如果该代理对象还没有加载实体数据（就是id以外的其他属性数据），那么它会查询二级缓存或者数据库来加载数据，但是 返回的还是代理对象，只不过已经加载了实体数据。</p>
+<p>get方法首先查询session缓存，没有的话查询二级缓存，最后查询数据库；反而load方法创建时首先查询session缓存，没有就创建代理，实际使用数据时才查询二级缓存和数据库。</p>
+<p>4.简单总结</p>
+<p>总之对于get和load的根本区别，一句话，hibernate对于load方法认为该数据在数据库中一定存在，可以放心的使用代理来延迟加载，如果在使用过程中发现了问题，只能抛异常；而对于get方法，hibernate一定要获取到真实的数据，否则返回null。</p>
+
+    
+  </div>
+  <footer class="end-sep">
+    
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+  
+    <article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2016/06/12/csdn/arch linux中的jdk的安装/">
+  <time datetime="2016-06-12T02:51:11.000Z">
+    2016-06-12
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title"><a href="/2016/06/12/csdn/arch linux中的jdk的安装/">arch linux中的jdk的安装</a></h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <p>编辑/etc/pacman.conf, 在文件末尾添加以下内容(操作前请做好相应备份)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[archlinuxcn]</div><div class="line">SigLevel = Optional TrustedOnly</div><div class="line">Server = http://mirrors.163.com/archlinux-cn/$arch</div></pre></td></tr></table></figure></p>
+<p>之后安装 archlinuxcn-keyring 包导入 GPG key 从甲骨文的官网<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pacman -S jdk</div></pre></td></tr></table></figure></p>
+<p>this all<br>thanks</p>
+
+    
+  </div>
+  <footer class="end-sep">
+    
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+  
+    <article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2015/08/04/csdn/Windows 端的makedown 编辑器 haroopad/">
   <time datetime="2015-08-04T02:51:11.000Z">
     2015-08-04
   </time>
@@ -67,7 +146,7 @@
     
     
   
-    <h1 class="title"><a href="/2015/08/04/csdn/javascript中的数据类型的问题/">javascript中的数据类型的问题</a></h1>
+    <h1 class="title"><a href="/2015/08/04/csdn/Windows 端的makedown 编辑器 haroopad/">javascript中的数据类型的问题</a></h1>
   
 
   </header>
@@ -96,7 +175,7 @@
   <header>
     
       <div class="icon"></div>
-      <a href="/2015/08/04/csdn/Windows 端的makedown 编辑器 haroopad/">
+      <a href="/2015/08/04/csdn/javascript中的数据类型的问题/">
   <time datetime="2015-08-04T02:51:11.000Z">
     2015-08-04
   </time>
@@ -104,7 +183,7 @@
     
     
   
-    <h1 class="title"><a href="/2015/08/04/csdn/Windows 端的makedown 编辑器 haroopad/">javascript中的数据类型的问题</a></h1>
+    <h1 class="title"><a href="/2015/08/04/csdn/javascript中的数据类型的问题/">javascript中的数据类型的问题</a></h1>
   
 
   </header>
@@ -237,51 +316,6 @@ jeDate({
   <header>
     
       <div class="icon"></div>
-      <a href="/2015/05/04/csdn/快逸报表（润乾报表使用）（v4 版本）/">
-  <time datetime="2015-05-04T02:51:11.000Z">
-    2015-05-04
-  </time>
-</a>
-    
-    
-  
-    <h1 class="title"><a href="/2015/05/04/csdn/快逸报表（润乾报表使用）（v4 版本）/">快逸报表（润乾报表使用）（v4 版本）</a></h1>
-  
-
-  </header>
-  
-  <div class="entry">
-    
-      <h5 id="润乾报表"><a href="#润乾报表" class="headerlink" title="润乾报表"></a>润乾报表</h5><pre><code>润乾报表是一个纯JAVA的企业级报表工具，支持对J2EE系统的嵌入式部署，无缝集成。服务器端支持各种常见的操作系统，支持各种常见的关系数据库和各类J2 EE的应用服务器，客户端采用标准纯html方式展现，支持ie和netscape， 润乾报表是领先的企业级报表分析软件。它提供了高效的报表设计方案、强大的报表展现能力、灵活的部署机制，支持强关联语义模型，并且具备强有力的填报功能和olap分析，为企业级数据分析与商业智能提供了高性能、高效率的报表系统解决方案。
-</code></pre><h5 id="下面我说一下我用这个实现的功能"><a href="#下面我说一下我用这个实现的功能" class="headerlink" title="下面我说一下我用这个实现的功能"></a>下面我说一下我用这个实现的功能</h5><pre><code>- 复杂报表的快速制作，并与j2EE系统结合，报表样式可以在快逸报表中设计，方便快捷！
-- 表头固定，在大量数据的报表中，报表固定是最重要的，支持多行表头固定，左右表头固定，实现起来只要一句代码就可以了！
-- 报表中数据超链接，可以传递参数到Action 或 jsp 可以实现网页中报表数据的的下钻功能！
-- 通过传参数来过虑报表，实现报表的动态数据的改变，
-- 通过报表中的宏定义来实现报表的动态的条件的改变（这里我理解为动态的Sql的改变）
-- 我说一下想吐嘈的东西 ，那就是v4版本中的样式真是丑爆了！！！！
-</code></pre><h5 id="下面是实现的思路"><a href="#下面是实现的思路" class="headerlink" title="下面是实现的思路"></a>下面是实现的思路</h5><h6 id="复杂报表的快速制作-－-这个略过"><a href="#复杂报表的快速制作-－-这个略过" class="headerlink" title="复杂报表的快速制作　－　这个略过"></a>复杂报表的快速制作　－　这个略过</h6><h6 id="表头的固定"><a href="#表头的固定" class="headerlink" title="表头的固定"></a>表头的固定</h6><pre><code>这个功能在jsp页面中的快逸的标签中加入滑动条就行了
-</code></pre><h6 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h6><pre><code>在报表设计时候加入表格中的超链接，把我们的数据通过GET的方式传递给下一个我们要接收值的action或jsp 页面中
-</code></pre><h6 id="传参数"><a href="#传参数" class="headerlink" title="传参数"></a>传参数</h6><pre><code>在报表制作时，在报表中加入要传的参数，这里的参数是一定要传的，不然我们的Sql语句是不能用的，是会报错的！在页面接收的时候我们用param =&quot;name=value&quot; 这样的方式来实现
-</code></pre><h6 id="宏定义"><a href="#宏定义" class="headerlink" title="宏定义"></a>宏定义</h6><pre><code>应用场景 ： 我们有的时候要用到报表的列的排序，可有的时候我们并用不到这个排序，那么我们就用到了这个宏定义了，其实我感觉宏定义就是把我们用到的Sql 用字符串的方式拼接给了sql 我们用到了，就把这个要拼接的sql 传给我们的动态的宏，这时候我们就可以方便自由的使用我们的报表了！
-</code></pre><h6 id="说一下这个报表的美化吧"><a href="#说一下这个报表的美化吧" class="headerlink" title="说一下这个报表的美化吧"></a>说一下这个报表的美化吧</h6><pre><code>我们公司用的是比较老的版本的，可是我们做报表的要把这个东西放给医院用的，不漂亮，这个说不过去吧，那么我也就一个简单的方法，也是一个偷懒的方法吧，我用了一个bootStrap ，来做的表格的美化，这里说一下，这个表格的内容的id 是跟润乾标签中name是一个的。这个比较坑的是，表头跟表的内容是放到了两个table 中！
-</code></pre>
-    
-  </div>
-  <footer class="end-sep">
-    
-      
-      
-    
-    <div class="clearfix"></div>
-  </footer>
-</article>
-
-
-  
-    <article class="post">
-  <header>
-    
-      <div class="icon"></div>
       <a href="/2015/05/04/csdn/javascript中的货币格式化/">
   <time datetime="2015-05-04T02:51:11.000Z">
     2015-05-04
@@ -316,61 +350,34 @@ jeDate({
   <header>
     
       <div class="icon"></div>
-      <a href="/2015/03/04/csdn/linux中使用 新世纪五笔输入法/">
-  <time datetime="2015-03-04T02:51:11.000Z">
-    2015-03-04
+      <a href="/2015/05/04/csdn/快逸报表（润乾报表使用）（v4 版本）/">
+  <time datetime="2015-05-04T02:51:11.000Z">
+    2015-05-04
   </time>
 </a>
     
     
   
-    <h1 class="title"><a href="/2015/03/04/csdn/linux中使用 新世纪五笔输入法/">linux 中 使用 新世纪五笔输入法</a></h1>
+    <h1 class="title"><a href="/2015/05/04/csdn/快逸报表（润乾报表使用）（v4 版本）/">快逸报表（润乾报表使用）（v4 版本）</a></h1>
   
 
   </header>
   
   <div class="entry">
     
-      <p>正如新世纪五笔输入法在windows 下是收费的情况是一样的，<br>我们大linux 下没有一个可以让我们轻松使用的新世纪五笔输入法，<br>可以方便使用的只有我们的86版的五笔输入法，不过我是用的新世纪输入 ，<br>。。。。。。我又在扯了！！！<br>进入正题：<br>    –你人安上ibus-rime 输入法<br>        以前用Fitcx -rime 切到英文的时候是全角，怎么切都回不来，<br>        这次就用了ibus 现在用着爽着呢</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install ibus-rime</div></pre></td></tr></table></figure>
-<p>然后下载<br>rime 的新世纪五笔的配置文件与码表，<br><a href="http://download.csdn.net/detail/pioneerlinzi/9419943" target="_blank" rel="external">http://download.csdn.net/detail/pioneerlinzi/9419943</a><br>下一步就是打文件 放到</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">~/.config/ibus/rime</div></pre></td></tr></table></figure>
-<p>就行了，不要放了重新部署！</p>
-
-    
-  </div>
-  <footer class="end-sep">
-    
-      
-      
-    
-    <div class="clearfix"></div>
-  </footer>
-</article>
-
-
-  
-    <article class="post">
-  <header>
-    
-      <div class="icon"></div>
-      <a href="/2015/03/04/csdn/html合并单元格/">
-  <time datetime="2015-03-04T02:51:11.000Z">
-    2015-03-04
-  </time>
-</a>
-    
-    
-  
-    <h1 class="title"><a href="/2015/03/04/csdn/html合并单元格/">html 中 table 的练习 关于合并单元格</a></h1>
-  
-
-  </header>
-  
-  <div class="entry">
-    
-      <p><img src="http://img.blog.csdn.net/20150327085313696" alt="code"><br>![样式]<br>(<a href="http://img.blog.csdn.net/20150327085120424)50327085035758" target="_blank" rel="external">http://img.blog.csdn.net/20150327085120424)50327085035758</a>)</p>
-
+      <h5 id="润乾报表"><a href="#润乾报表" class="headerlink" title="润乾报表"></a>润乾报表</h5><pre><code>润乾报表是一个纯JAVA的企业级报表工具，支持对J2EE系统的嵌入式部署，无缝集成。服务器端支持各种常见的操作系统，支持各种常见的关系数据库和各类J2 EE的应用服务器，客户端采用标准纯html方式展现，支持ie和netscape， 润乾报表是领先的企业级报表分析软件。它提供了高效的报表设计方案、强大的报表展现能力、灵活的部署机制，支持强关联语义模型，并且具备强有力的填报功能和olap分析，为企业级数据分析与商业智能提供了高性能、高效率的报表系统解决方案。
+</code></pre><h5 id="下面我说一下我用这个实现的功能"><a href="#下面我说一下我用这个实现的功能" class="headerlink" title="下面我说一下我用这个实现的功能"></a>下面我说一下我用这个实现的功能</h5><pre><code>- 复杂报表的快速制作，并与j2EE系统结合，报表样式可以在快逸报表中设计，方便快捷！
+- 表头固定，在大量数据的报表中，报表固定是最重要的，支持多行表头固定，左右表头固定，实现起来只要一句代码就可以了！
+- 报表中数据超链接，可以传递参数到Action 或 jsp 可以实现网页中报表数据的的下钻功能！
+- 通过传参数来过虑报表，实现报表的动态数据的改变，
+- 通过报表中的宏定义来实现报表的动态的条件的改变（这里我理解为动态的Sql的改变）
+- 我说一下想吐嘈的东西 ，那就是v4版本中的样式真是丑爆了！！！！
+</code></pre><h5 id="下面是实现的思路"><a href="#下面是实现的思路" class="headerlink" title="下面是实现的思路"></a>下面是实现的思路</h5><h6 id="复杂报表的快速制作-－-这个略过"><a href="#复杂报表的快速制作-－-这个略过" class="headerlink" title="复杂报表的快速制作　－　这个略过"></a>复杂报表的快速制作　－　这个略过</h6><h6 id="表头的固定"><a href="#表头的固定" class="headerlink" title="表头的固定"></a>表头的固定</h6><pre><code>这个功能在jsp页面中的快逸的标签中加入滑动条就行了
+</code></pre><h6 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h6><pre><code>在报表设计时候加入表格中的超链接，把我们的数据通过GET的方式传递给下一个我们要接收值的action或jsp 页面中
+</code></pre><h6 id="传参数"><a href="#传参数" class="headerlink" title="传参数"></a>传参数</h6><pre><code>在报表制作时，在报表中加入要传的参数，这里的参数是一定要传的，不然我们的Sql语句是不能用的，是会报错的！在页面接收的时候我们用param =&quot;name=value&quot; 这样的方式来实现
+</code></pre><h6 id="宏定义"><a href="#宏定义" class="headerlink" title="宏定义"></a>宏定义</h6><pre><code>应用场景 ： 我们有的时候要用到报表的列的排序，可有的时候我们并用不到这个排序，那么我们就用到了这个宏定义了，其实我感觉宏定义就是把我们用到的Sql 用字符串的方式拼接给了sql 我们用到了，就把这个要拼接的sql 传给我们的动态的宏，这时候我们就可以方便自由的使用我们的报表了！
+</code></pre><h6 id="说一下这个报表的美化吧"><a href="#说一下这个报表的美化吧" class="headerlink" title="说一下这个报表的美化吧"></a>说一下这个报表的美化吧</h6><pre><code>我们公司用的是比较老的版本的，可是我们做报表的要把这个东西放给医院用的，不漂亮，这个说不过去吧，那么我也就一个简单的方法，也是一个偷懒的方法吧，我用了一个bootStrap ，来做的表格的美化，这里说一下，这个表格的内容的id 是跟润乾标签中name是一个的。这个比较坑的是，表头跟表的内容是放到了两个table 中！
+</code></pre>
     
   </div>
   <footer class="end-sep">
@@ -506,26 +513,60 @@ jeDate({
   <header>
     
       <div class="icon"></div>
-      <a href="/2015/02/04/csdn/uefi硬盘下windows与linux 双系时改变引导首选项为linux/">
-  <time datetime="2015-02-04T02:51:11.000Z">
-    2015-02-04
+      <a href="/2015/03/04/csdn/html合并单元格/">
+  <time datetime="2015-03-04T02:51:11.000Z">
+    2015-03-04
   </time>
 </a>
     
     
   
-    <h1 class="title"><a href="/2015/02/04/csdn/uefi硬盘下windows与linux 双系时改变引导首选项为linux/">uefi 硬盘下windows 与linux 双系时改变引导首选项为linux</a></h1>
+    <h1 class="title"><a href="/2015/03/04/csdn/html合并单元格/">html 中 table 的练习 关于合并单元格</a></h1>
   
 
   </header>
   
   <div class="entry">
     
-      <p>我最近把引导模式改成了 UEFI +GPT，但是发现，改成这个之后，又装了双系统，<br>windows 8.1 +fedora 但是我想把fedora 改为第一启动项，上网上搜了一下，<br>有个easyUEFI的工具可以管理，也有linux 但是使用之后发现，没有我想要的效果，<br>我还是自已来吧，<br>//使windows 启动项启效</p>
-<ol>
-<li>我用fedora 在ESP分区中修改ms文件夹中的文件名<br>//     在fedora的引导 中建立windows 引导</li>
-<li>因为我的fedora的启动引导中有windows的引导项，<br>但是那是以前的文件的位置，我们要手动的改一下，<br>//    改变linux 下的GRUB的引导下的windows 的引导的位置<br>3 .     vi /boot/grub/grub.conf<br>我的是把ms 下的Boot 文件夹名改为了 Boot2 那么我们把引导的位置改为Boot2 就好了，<br>重启： windows 正常引导</li>
-</ol>
+      <p><img src="http://img.blog.csdn.net/20150327085313696" alt="code"><br>![样式]<br>(<a href="http://img.blog.csdn.net/20150327085120424)50327085035758" target="_blank" rel="external">http://img.blog.csdn.net/20150327085120424)50327085035758</a>)</p>
+
+    
+  </div>
+  <footer class="end-sep">
+    
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+  
+    <article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2015/03/04/csdn/linux中使用 新世纪五笔输入法/">
+  <time datetime="2015-03-04T02:51:11.000Z">
+    2015-03-04
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title"><a href="/2015/03/04/csdn/linux中使用 新世纪五笔输入法/">linux 中 使用 新世纪五笔输入法</a></h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <p>正如新世纪五笔输入法在windows 下是收费的情况是一样的，<br>我们大linux 下没有一个可以让我们轻松使用的新世纪五笔输入法，<br>可以方便使用的只有我们的86版的五笔输入法，不过我是用的新世纪输入 ，<br>。。。。。。我又在扯了！！！<br>进入正题：<br>    –你人安上ibus-rime 输入法<br>        以前用Fitcx -rime 切到英文的时候是全角，怎么切都回不来，<br>        这次就用了ibus 现在用着爽着呢</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install ibus-rime</div></pre></td></tr></table></figure>
+<p>然后下载<br>rime 的新世纪五笔的配置文件与码表，<br><a href="http://download.csdn.net/detail/pioneerlinzi/9419943" target="_blank" rel="external">http://download.csdn.net/detail/pioneerlinzi/9419943</a><br>下一步就是打文件 放到</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">~/.config/ibus/rime</div></pre></td></tr></table></figure>
+<p>就行了，不要放了重新部署！</p>
 
     
   </div>
@@ -545,6 +586,8 @@ jeDate({
   
     <a href="/" class="prev">Prev</a>
   
+  
+    <a href="/page/3/" class="next">Next</a>
   
   <div class="clearfix"></div>
 </nav>
