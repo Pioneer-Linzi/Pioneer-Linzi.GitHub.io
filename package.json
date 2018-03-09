@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Pioneer-Linzi/Pioneer-Linzi.GitHub.io/issues"
   },
-  "homepage": "https://github.com/Pioneer-Linzi/Pioneer-Linzi.GitHub.io#readme"
+  "homepage": "https://github.com/Pioneer-Linzi/Pioneer-Linzi.GitHub.io#readme",
+  "devDependencies": {
+    "del": "^3.0.0"
+  }
 }
