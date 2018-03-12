@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <a href="./reactDemo/index.html">reactDemo</a>
+    <a href="./page/reactDemo.html">reactDemo</a>
     <img src="./assets/logo.png">
     <router-view/>
   </div>

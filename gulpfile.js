@@ -1,21 +1,31 @@
 var gulp = require('gulp');
 var del = require('del');
-connect = require('gulp-connect');
+var connect = require('gulp-connect');
+var rename =require('gulp-rename');
+
 
 gulp.task('clean',function(){
     return del('./dist/');
 });
 
-gulp.task('blog',function(){
-    gulp.src('./src/blog/dist/**/*.*').pipe(gulp.dest('./dist/'));
+gulp.task('blog',['reactDemo'],function(){
+        gulp.src('./src/blog/dist/**/*.*').pipe(gulp.dest('./dist/'));
+    console.log('finish blog');
 });
 
-gulp.task('learnDemo',function(){
-    gulp.src('./src/reactDemo/build/**/*.*').pipe(gulp.dest('./dist/'));
+
+gulp.task('reactDemoHtml',function(){
+    gulp.src('./src/reactDemo/build/index.html').pipe(rename('reactDemo.html')).pipe(gulp.dest('./dist/page/'));
+});
+
+
+
+gulp.task('reactDemo',['reactDemoHtml'],function(){
+    gulp.src(['./src/reactDemo/build/**/*.*','!./src/reactDemo/build/index.html']).pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('watch',function(){
-    gulp.watch('./dist/**/*.*',['blog','learnDemo']);
+    gulp.watch('./dist/**/*.*',['blog']);
 }) 
 
 gulp.task('connect',function(){
@@ -26,8 +36,8 @@ gulp.task('connect',function(){
     })
 })
 
-gulp.task('default',['clean','connect','watch'], function() {
-    return gulp.start('blog','learnDemo');
+gulp.task('default',['clean'], function() {
+    return gulp.start('blog','connect','watch');
 });
 
 
