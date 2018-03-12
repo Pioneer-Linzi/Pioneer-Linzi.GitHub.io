@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "gulp-connect": "^5.5.0"
+  }
+}

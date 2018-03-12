@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Pioneer-Linzi/Pioneer-Linzi.GitHub.io#readme",
   "devDependencies": {
-    "del": "^3.0.0"
+    "del": "^3.0.0",
+    "gulp-connect": "^5.5.0"
   }
 }
