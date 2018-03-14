@@ -25,7 +25,8 @@ gulp.task('reactDemo',['reactDemoHtml'],function(){
 });
 
 gulp.task('watch',function(){
-    gulp.watch('../**/*.*',['blog']);
+    gulp.watch('./src/blog/*.*',['blog']);
+    gulp.watch('./src/reactDemo',['blog']);
 }) 
 
 gulp.task('connect',function(){
@@ -36,8 +37,8 @@ gulp.task('connect',function(){
     })
 })
 
-gulp.task('default', function() {
-    return gulp.start('blog','connect','watch');
+gulp.task('default',['connect','watch'], function() {
+    return gulp.start('blog');
 });
 
 
