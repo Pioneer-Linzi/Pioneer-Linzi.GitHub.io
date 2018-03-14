@@ -1,11 +1,8 @@
 <template>
   <div id="app">
     <a href="./page/reactDemo.html">reactDemo</a>
-    <img src="./assets/logo.png">
-    <router-view/>
   </div>
 </template>
-
 <script>
 export default {
   name: 'App'
