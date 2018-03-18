@@ -27,11 +27,11 @@ gulp.task('reactDemo',['reactDemoHtml'],function(){
 gulp.task('watch',function(){
     gulp.watch('./src/blog/*.*',['blog']);
     gulp.watch('./src/reactDemo',['blog']);
-}) 
+})
 
 gulp.task('connect',function(){
     connect.server({
-        root:'../',  
+        root:'../',
         ip:'0.0.0.0',
         livereload:true
     })
