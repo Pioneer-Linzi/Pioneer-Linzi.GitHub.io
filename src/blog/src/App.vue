@@ -3,6 +3,10 @@
     <a href="./page/reactDemo.html">reactDemo</a>
     <img src="./assets/logo.png">
     <router-view/>
+	<div class="main">
+		test for less
+
+	</div>
   </div>
 </template>
 
@@ -12,7 +16,8 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less">
+@import "ui/test.less";
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
