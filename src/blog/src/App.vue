@@ -1,29 +1,27 @@
 <template>
-  <div id="app">
-    <a href="./page/reactDemo.html">reactDemo</a>
-    <img src="./assets/logo.png">
-    <router-view/>
-	<div class="main">
-		test for less
-
+	<div id="app">
+		<v-header>
+		</v-header>
 	</div>
-  </div>
 </template>
 
 <script>
+import Header from './components/Header'
 export default {
-  name: 'App'
+	name: 'App',
+	components: {
+		'v-header': Header
+	}
 }
 </script>
 
 <style lang="less">
-@import "ui/test.less";
+@import 'normalize.css/normalize.css';
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+	font-family: 'Avenir', Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-align: center;
+	color: #2c3e50;
 }
 </style>
