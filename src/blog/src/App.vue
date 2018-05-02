@@ -1,24 +1,45 @@
 <template>
-  <div id="app">
-    <a href="./page/reactDemo.html">reactDemo</a>
-    <img src="./assets/logo.png">
-    <router-view/>
-  </div>
+	<div id="app">
+		<v-header>
+		</v-header>
+		<div class="blog-main">
+		<v-main>
+		</v-main>
+		</div>
+	</div>
 </template>
-
 <script>
+import Header from './components/Header'
+import Main from './components/Main'
 export default {
-  name: 'App'
+	name: 'App',
+	components: {
+		'v-header': Header,
+		'v-main': Main
+	}
 }
 </script>
-
-<style>
+<style lang="less">
+@import 'normalize.css/normalize.css';
+body{
+	color: #2c3e50;
+	background : rgba(225, 225, 225, 1);
+	display: flex;
+	justify-content: center;
+}
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+	width:100%;
+	font-family: 'Avenir', Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-align: center;
+}
+.blog-main{
+	width:1000px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	align-items: center;
 }
 </style>
