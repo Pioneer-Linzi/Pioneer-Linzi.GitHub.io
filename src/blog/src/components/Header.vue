@@ -4,6 +4,9 @@
 			<div class="header">
 				<div class="logo">
 				</div>
+        <div class="nav">
+          <a href="./page/reactDemo.html">react learn</a>
+        </div>
 			</div>
 		</header>
 	</div>
