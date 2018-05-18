@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var del = require('del');
 var connect = require('gulp-connect');
 var rename =require('gulp-rename');
+let child_process = require('child_process');
 
 
 gulp.task('clean',function(){
@@ -41,4 +42,48 @@ gulp.task('default',['connect','watch'], function() {
     return gulp.start('blog');
 });
 
+
+gulp.task('blogBuild',function(cb){
+    try{
+
+        child_process.exec('cd  src/blog && npm run build ', { shell: '/bin/sh' }, function (error, stdout, stderr) {
+            if (error) {
+                console.error(`exec error: ${error}`);
+                return;
+            }
+            console.log(`stdout: ${stdout}`);
+            console.log(`stderr: ${stderr}`);
+        });
+    }catch (e) {
+        console.log(e);
+    } finally {
+        console.log('----------------------------------------------------end build------------------------------------------------------');
+        cb();
+    }
+
+});
+
+gulp.task('reactDemoBuild',function(cb){
+    try{
+
+        child_process.exec('cd  src/reactdemo && npm run build ', { shell: '/bin/sh' }, function (error, stdout, stderr) {
+            if (error) {
+                console.error(`exec error: ${error}`);
+                return;
+            }
+            console.log(`stdout: ${stdout}`);
+            console.log(`stderr: ${stderr}`);
+        });
+    }catch (e) {
+        console.log(e);
+    } finally {
+        console.log('----------------------------------------------------end build------------------------------------------------------');
+        cb();
+    }
+});
+
+
+gulp.task('build',['blogBuild','reactDemoBuild'],function(){
+    gulp.start('blog');
+});
 
