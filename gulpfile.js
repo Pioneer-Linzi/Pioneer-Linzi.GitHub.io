@@ -65,7 +65,6 @@ gulp.task('blogBuild',function(cb){
 
 gulp.task('reactDemoBuild',function(cb){
     try{
-
         child_process.exec('cd  src/reactdemo && npm run build ', { shell: '/bin/sh' }, function (error, stdout, stderr) {
             if (error) {
                 console.error(`exec error: ${error}`);
