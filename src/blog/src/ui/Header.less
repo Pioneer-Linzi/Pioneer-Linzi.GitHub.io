@@ -4,22 +4,36 @@ header{
 	display:flex;
 	justify-content:center;
 	align-items:center;
-	.header{
-		width:100%;
+  box-shadow : 0px 1px 3px rgba(26, 26, 26, 0.1);
+  filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=0, OffY=1, Color='#1A1A1A') ;
+  background : #FFFFFF;
+  .header{
+		width:1000px;
 		height:100%;
-		background : #FFFFFF;
 		background : rgba(255, 255, 255, 1);
-		box-shadow : 0px 1px 3px rgba(26, 26, 26, 0.1);
-		filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=0, OffY=1, Color='#1A1A1A') ;
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
 		>.logo{
-			background-repeat : no-repeat;
-			width : 20px;
+      width : 21px;
 			height : 30px;
+      background: url('../assets/logo.png') no-repeat;
+      background-size: 100% 100%;
+      margin-left:15px;
 		}
 		.nav{
 			.nav-item{
-
+        margin-left:30px;
+        font-size:15px;
+        text-decoration: none;
+        color:#8590a6;
+        &:hover{
+          color:#065A80;
+        }
 			}
+      .item-activity{
+        color:black;
+      }
 		}
 	}
 }

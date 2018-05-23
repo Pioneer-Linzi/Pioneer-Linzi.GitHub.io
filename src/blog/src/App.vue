@@ -21,6 +21,9 @@ export default {
 </script>
 <style lang="less">
 @import 'normalize.css/normalize.css';
+*{
+  font-family:-apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif;
+}
 body{
 	color: #2c3e50;
 	background : rgba(225, 225, 225, 1);

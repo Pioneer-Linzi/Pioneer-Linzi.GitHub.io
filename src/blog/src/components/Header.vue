@@ -5,7 +5,12 @@
 				<div class="logo">
 				</div>
         <div class="nav">
-          <a href="./page/reactDemo.html">react learn</a>
+          <a href="./page/reactDemo.html" class="nav-item item-activity">首页</a>
+          <a href="./page/reactDemo.html" class="nav-item">前端</a>
+          <a href="./page/reactDemo.html" class="nav-item">后端</a>
+          <a href="./page/reactDemo.html" class="nav-item">服务器</a>
+          <a href="./page/reactDemo.html" class="nav-item">工具</a>
+          <a href="./page/reactDemo.html" class="nav-item">实验室</a>
         </div>
 			</div>
 		</header>
@@ -21,5 +26,4 @@ export default {
 #Header{
 	width:100%;
 }
-
 </style>
