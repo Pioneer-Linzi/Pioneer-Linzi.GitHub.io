@@ -1,11 +1,14 @@
 /* eslint-disable no-unused-vars,no-mixed-spaces-and-tabs,handle-callback-err */
 const pluginName = 'Md2js'
 const fs = require('fs')
+const util = require('util')
+const readFileAsync = util.promisify(fs.readFile)
+const readDirAsync = util.promisify(fs.readdir)
+const fileStat = util.promisify(fs.stat)
+const writeFile = util.promisify(fs.writeFile)
 
 const filePath = './page'
-const DIRTYPE = 'DIR'
-const FILETYPE = 'FILE'
-
+const dataPath = './static/data.js'
 class Md2js {
 	constructor () {
 		console.log('--------------------------------------------------------md2js-------------------------------------------------------------')
@@ -14,49 +17,58 @@ class Md2js {
 		// 指定一个挂载到 webpack 自身的事件钩子。
 		compiler.plugin('make', (compilation /* 处理 webpack 内部实例的特定数据。 */, callback) => {
 			console.log('markdown file to js var')
-			// 功能完成后调用 webpack 提供的回调。
-			// 读取page 目录下的md 文件
-			this.readdirFile(DIRTYPE, filePath).then((files) => {
-			  let promies = []
-			  for (let i = 0; i < files.length; i++) {
-					promies.push(this.readdirFile(DIRTYPE, files[i]))
-				}
-				Promise.all(promies).then((res) => {
-					let pro = []
-					console.log(res)
-					for (let i = 0; i < res.length; i++) {
-					  for (let j; j < res[i].length; j++) {
-							pro.push(this.readdirFile(FILETYPE, files[i]))
-						}
-					}
-					Promise.all(pro).then((res) => {
-					  console.log(res)
-						callback()
-					})
-				})
-			})
+			this.init()
+			callback()
 		})
 	}
-	readdirFile (fileType, path) {
-	  return new Promise((resolve, reject) => {
-	    if (fileType === DIRTYPE) {
-				fs.readdir(path, 'utf8', (error, files) => {
-					let fileNames = []
-					files.forEach(function (fileName) {
-						fileNames.push(path + '/' + fileName)
-					})
-					resolve(fileNames)
-				})
-			} else {
-				fs.readFile(path, 'utf8', (error, files) => {
-				  let fileNames = []
-				  files.forEach(function (fileName) {
-				   fileNames.push(path + '/' + fileName)
-					})
-					resolve(fileNames)
-				})
+
+	async init () {
+	  let blogData = {}
+		let pageDir = await readDirAsync(filePath)
+		// pageDir 分类 加入数据
+		for (let i = 0; i < pageDir.length; i++) {
+	    blogData[pageDir[i]] = []
+	    let blogDir = await readDirAsync(filePath + '/' + pageDir[i])
+	    for (let j = 0; j < blogDir.length; j++) {
+	      let blog = {}
+	      // title and labels
+	      blog = this.formatBlogTitle(blogDir[j])
+				// createTime
+				let blogStat = await fileStat(filePath + '/' + pageDir[i] + '/' + blogDir[j])
+				blog['createTime'] = blogStat.ctime
+				// content
+				let blogContent = await readFileAsync(filePath + '/' + pageDir[i] + '/' + blogDir[j])
+				blog['content'] = '' + blogContent
+				blogData[pageDir[i]].push(blog)
 			}
-		})
+		}
+
+		await writeFile(dataPath, 'export default ' + JSON.stringify(blogData), 'utf8')
+		// console.log(write)
+		// console.log(JSON.stringify(blogData))
+	}
+
+	/**
+   * 文件名约定
+   * 扩展名为 .md
+   * 以 - 分割
+   * 最前面的是title
+   * 后面的是lable
+   * @param title
+   */
+	formatBlogTitle (title) {
+		let blogTitle
+		blogTitle = {
+			title: '',
+			labels: []
+		}
+		// 去扩展名 .md
+		title = title.replace('.md', '')
+		// 切分label
+		let titles = title.split('-')
+		blogTitle.title = titles.shift()
+		blogTitle.labels = titles
+		return blogTitle
 	}
 }
 

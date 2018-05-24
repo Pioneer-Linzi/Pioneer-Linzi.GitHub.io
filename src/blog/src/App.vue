@@ -11,6 +11,9 @@
 <script>
 import Header from './components/Header'
 import Main from './components/Main'
+import data from '../static/data'
+
+console.log(data)
 export default {
 	name: 'App',
 	components: {
