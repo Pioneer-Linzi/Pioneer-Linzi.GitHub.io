@@ -12,11 +12,19 @@ export default {
 	name: 'Content',
 	data () {
 	 return {
-	    source: ''
 		}
 	},
 	components: {
 		VueMarkdown
+	},
+	created () {
+		console.log(this.$store.state.blog)
+		this.setData()
+	},
+	computed: {
+		source: function () {
+		  return this.$store.state.blog.blogs['backend'][0]['content']
+		}
 	}
 }
 </script>
