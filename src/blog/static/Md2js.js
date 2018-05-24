@@ -6,7 +6,7 @@ const readFileAsync = util.promisify(fs.readFile)
 const readDirAsync = util.promisify(fs.readdir)
 const fileStat = util.promisify(fs.stat)
 const writeFile = util.promisify(fs.writeFile)
-
+const appendFile = util.promisify(fs.appendFile)
 const filePath = './page'
 const dataPath = './static/data.js'
 class Md2js {
@@ -15,7 +15,7 @@ class Md2js {
 	}
 	apply (compiler) {
 		// 指定一个挂载到 webpack 自身的事件钩子。
-		compiler.plugin('make', (compilation /* 处理 webpack 内部实例的特定数据。 */, callback) => {
+		compiler.plugin('entryOption', (compilation /* 处理 webpack 内部实例的特定数据。 */, callback) => {
 			console.log('markdown file to js var')
 			this.init()
 			callback()
@@ -43,7 +43,13 @@ class Md2js {
 			}
 		}
 
+		// 文件是否存在
+		let stat = fs.existsSync(dataPath)
+		if (stat === false) {
+	    await appendFile(dataPath)
+		}
 		await writeFile(dataPath, 'export default ' + JSON.stringify(blogData), 'utf8')
+
 		// console.log(write)
 		// console.log(JSON.stringify(blogData))
 	}

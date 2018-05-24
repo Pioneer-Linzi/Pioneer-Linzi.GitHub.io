@@ -46,6 +46,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     }
   },
   plugins: [
+    new Md2js(),
     new webpack.DefinePlugin({
       'process.env': require('../config/dev.env')
     }),
@@ -65,8 +66,8 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         to: config.dev.assetsSubDirectory,
         ignore: ['.*']
       }
-    ]),
-    new Md2js()
+    ])
+
   ]
 })
 
