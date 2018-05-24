@@ -49,9 +49,6 @@ class Md2js {
 	    await appendFile(dataPath)
 		}
 		await writeFile(dataPath, 'export default ' + JSON.stringify(blogData), 'utf8')
-
-		// console.log(write)
-		// console.log(JSON.stringify(blogData))
 	}
 
 	/**
