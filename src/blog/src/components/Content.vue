@@ -1,7 +1,6 @@
 <template>
   <div id="Content" class="content">
-    <vue-markdown :source="source">
-    </vue-markdown>
+    <vue-markdown >{{source}}</vue-markdown>
   </div>
 </template>
 <script>
@@ -19,7 +18,6 @@ export default {
 	},
 	created () {
 		console.log(this.$store.state.blog)
-		this.setData()
 	},
 	computed: {
 		source: function () {
