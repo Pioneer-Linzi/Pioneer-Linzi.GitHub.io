@@ -1,14 +1,12 @@
 <template>
   <div id="Content" class="content">
     <article class="markdown-body">
-      <!-- note the triple curly braces -->
       {{renderedMarkdown}}
     </article>
   </div>
 </template>
 <script>
 /* eslint-disable no-mixed-spaces-and-tabs */
-
 export default {
 	name: 'Content',
 	data: function () {
@@ -16,7 +14,7 @@ export default {
 			renderedMarkdown: ''
 		}
 	},
-	created: function () {
+	created () {
 	  let data = this.$store.state.blog.blogs['backend'][0]['content']
 		console.log(data)
 		this.$http({
