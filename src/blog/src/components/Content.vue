@@ -20,7 +20,7 @@ export default {
 		this.$http({
 			url: 'https://api.github.com/markdown',
 			method: 'POST',
-			data: {text: data, mode: 'gfm'}
+			data: JSON.parse(JSON.stringify({text: data, mode: 'gfm'}))
 		}).then(function (response) {
 			// success callback
 			this.renderedMarkdown = response.data
