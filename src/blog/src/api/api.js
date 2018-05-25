@@ -2,17 +2,8 @@
 import Vue from 'vue'
 
 const api = {
-	parseMarkDown: async function (data) {
-		let param
-		param = {
-			method: 'post',
-			headers: {
-				'Accept': 'application/json;charset=UTF-8'
-			},
-			data: {text: data, mode: 'gfm'}
-		}
-		let res = await fetch('https://api.github.com/markdown', param)
-		return res.json()
+	parseMarkDown: function (data) {
+		return Vue.http.post('https://api.github.com/markdown', {text: data, mode: 'gfm'})
 	}
 }
 export default api

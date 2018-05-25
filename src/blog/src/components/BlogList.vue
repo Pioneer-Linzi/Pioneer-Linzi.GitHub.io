@@ -25,11 +25,10 @@ export default {
 			return this.$store.state.blog.blogs['backend']
 		}
 	},
-	methods: {
-		blogItem: function (key) {
+	watch: {
+		blogItem: async function (key) {
 			let blogs = this.$store.state.blog.blogs['backend'][key]['content']
-			const res = api.parseMarkDown(blogs)
-			console.log(res)
+			const res = await api.parseMarkDown(blogs)
 			return res.data
 		}
 	}
