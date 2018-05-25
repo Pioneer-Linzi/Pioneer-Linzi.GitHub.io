@@ -1,28 +1,37 @@
 <template>
   <div id="Content" class="content">
-    <vue-markdown >{{source}}</vue-markdown>
+    <article class="markdown-body">
+      <!-- note the triple curly braces -->
+      {{renderedMarkdown}}
+    </article>
   </div>
 </template>
 <script>
 /* eslint-disable no-mixed-spaces-and-tabs */
 
-import VueMarkdown from 'vue-markdown'
 export default {
 	name: 'Content',
-	data () {
-	 return {
+	data: function () {
+		return {
+			renderedMarkdown: ''
 		}
 	},
-	components: {
-		VueMarkdown
-	},
-	created () {
-		console.log(this.$store.state.blog)
+	created: function () {
+	  let data = this.$store.state.blog.blogs['backend'][0]['content']
+		console.log(data)
+		this.$http({
+			url: 'https://api.github.com/markdown',
+			method: 'POST',
+			data: {text: data, mode: 'gfm'}
+		}).then(function (response) {
+			// success callback
+			this.renderedMarkdown = response.data
+		}, function (response) {
+			// error callback
+			console.log(response.data)
+		})
 	},
 	computed: {
-		source: function () {
-		  return this.$store.state.blog.blogs['backend'][0]['content']
-		}
 	}
 }
 </script>
