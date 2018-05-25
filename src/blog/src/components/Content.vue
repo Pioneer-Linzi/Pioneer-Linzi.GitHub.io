@@ -17,7 +17,7 @@ export default {
 	  let data = this.$store.state.blog.blogs['backend'][0]['content']
 		console.log(data)
 		console.log(2)
-		this.$http.post('https://api.github.com/markdown', JSON.parse(JSON.stringify({text: data, mode: 'gfm'}))).then(function (response) {
+		this.$http.post('https://api.github.com/markdown', {text: data, mode: 'gfm'}).then(function (response) {
 			// success callback
 			this.renderedMarkdown = response.data
 		}, function (response) {

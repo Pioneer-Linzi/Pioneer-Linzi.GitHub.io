@@ -1,6 +1,7 @@
 <template>
 	<div id="main">
-		<v-content></v-content>
+		<!--<v-content></v-content>-->
+    <router-view></router-view>
 		<v-aside></v-aside>
 	</div>
 </template>
