@@ -1,18 +1,14 @@
 <template>
   <div id="blog-list">
-    <!--<v-item v-for="item in blogList" v-bind:key="item.createTime">-->
-      <!--{{item.title}}-->
-    <!--</v-item>-->
-    <p v-for="(item,key) in blogList" v-bind:key="key">
-      {{blogItem(key)}}
-    </p>
+    <v-item v-for="(item,key) in blogList" v-bind:key="key" :classify="content" :itemkey=key>
+    </v-item>
   </div>
 </template>
 
 <script>
 /* eslint-disable no-mixed-spaces-and-tabs */
 import Item from './Item'
-import api from '../api/api'
+
 export default {
 	name: 'blog-list',
 	components: {
@@ -26,11 +22,7 @@ export default {
 		}
 	},
 	watch: {
-		blogItem: async function (key) {
-			let blogs = this.$store.state.blog.blogs['backend'][key]['content']
-			const res = await api.parseMarkDown(blogs)
-			return res.data
-		}
+
 	}
 }
 </script>

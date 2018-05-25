@@ -1,11 +1,28 @@
 <template>
   <div class="blog-item">
+    {{content}}
   </div>
 </template>
 
 <script>
+import api from '../api/api'
 export default {
-	name: 'item'
+	data () {
+		return {
+			content: ''
+		}
+	},
+	name: 'item',
+	methods: {
+		blogItem: async function (key) {
+			let blogs = this.$store.state.blog.blogs['backend'][key]['content']
+			const res = await api.parseMarkDown(blogs)
+			this.data.content = res.data
+		}
+	},
+	created () {
+		this.blogItem()
+	}
 }
 </script>
 
