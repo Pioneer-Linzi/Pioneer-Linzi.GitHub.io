@@ -1,8 +1,7 @@
 <template>
   <div id="Content" class="content">
-    <article class="markdown-body">
-      {{renderedMarkdown}}
-    </article>
+    <div class="markdown-body" v-html="renderedMarkdown">
+    </div>
   </div>
 </template>
 <script>
@@ -17,11 +16,8 @@ export default {
 	created () {
 	  let data = this.$store.state.blog.blogs['backend'][0]['content']
 		console.log(data)
-		this.$http({
-			url: 'https://api.github.com/markdown',
-			method: 'POST',
-			data: JSON.parse(JSON.stringify({text: data, mode: 'gfm'}))
-		}).then(function (response) {
+		console.log(2)
+		this.$http.post('https://api.github.com/markdown', JSON.parse(JSON.stringify({text: data, mode: 'gfm'}))).then(function (response) {
 			// success callback
 			this.renderedMarkdown = response.data
 		}, function (response) {
@@ -38,8 +34,12 @@ export default {
 
   #Content {
     width: 660px;
-    height: 500px;
     margin-top: 10px;
     margin-left: 16px;
+    clear:both;
+  }
+  .markdown-body{
+    text-align: left;
+    margin:20px;
   }
 </style>

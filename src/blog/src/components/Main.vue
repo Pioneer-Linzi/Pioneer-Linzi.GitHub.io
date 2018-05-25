@@ -21,6 +21,5 @@ export default {
 	width:100%;
 	display: flex;
 	justify-content: space-between;
-	height:300px;
 }
 </style>
