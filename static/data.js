@@ -1,1 +1,0 @@
-export default {"backend":[{"title":"数据的格式化","labels":["算法","linux"],"createTime":"2018-05-24T05:27:23.164Z","content":"backend demo \n"}],"frontend":[{"title":"能量与热量","labels":["数学","物理"],"createTime":"2018-05-24T05:27:56.378Z","content":"front end demo\n"}]}
