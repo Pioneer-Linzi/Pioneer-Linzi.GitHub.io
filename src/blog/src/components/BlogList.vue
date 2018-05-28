@@ -1,6 +1,6 @@
 <template>
   <div id="blog-list">
-    <v-item v-for="(item,key) in blogList" v-bind:key="key" :classify="content" :itemkey=key>
+    <v-item v-for="(item,key) in blogList" v-bind:key="key" :classify="item" :itemkey=key>
     </v-item>
   </div>
 </template>

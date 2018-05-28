@@ -1,23 +1,26 @@
 <template>
-  <div class="blog-item">
-    {{content}}
+  <div class="blog-item" v-html="content">
   </div>
 </template>
 
 <script>
+/* eslint-disable no-mixed-spaces-and-tabs */
+
 import api from '../api/api'
 export default {
-	data () {
+	data: function () {
 		return {
-			content: ''
+		  content: ''
 		}
 	},
+	props: ['itemkey', 'classify'],
 	name: 'item',
 	methods: {
-		blogItem: async function (key) {
-			let blogs = this.$store.state.blog.blogs['backend'][key]['content']
-			const res = await api.parseMarkDown(blogs)
-			this.data.content = res.data
+		blogItem: async function () {
+		  if (this.classify) {
+				const res = await api.parseMarkDown(this.classify.content)
+				this.content = res.data
+			}
 		}
 	},
 	created () {
@@ -28,11 +31,18 @@ export default {
 
 <style scoped>
   .blog-item{
-    width: 660px;
+    width: 100%;
     margin-top: 10px;
-    margin-left: 16px;
     clear:both;
     height:300px;
+    text-align: left;
+    background : rgba(255, 255, 255, 1);
+    border-radius : 2px;
+    -moz-border-radius : 2px;
+    -webkit-border-radius : 2px;
+    box-shadow : 0px 1px 3px rgba(26, 26, 26, 0.1);
+    filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=0, OffY=1, Color='#1A1A1A');
+    overflow: hidden;
   }
 
 </style>

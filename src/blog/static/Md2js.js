@@ -46,14 +46,14 @@ class Md2js {
 		// 文件是否存在
 		let stat = fs.existsSync(dataPath)
 		if (Boolean(stat) === false) {
-      await appendFile(dataPath)
+			await appendFile(dataPath)
 		}
 		let oldfile = await readFileAsync(dataPath)
-    if(''+oldfile==="export default " + JSON.stringify(blogData)){
+		if ('' + oldfile === 'export default ' + JSON.stringify(blogData)) {
 	    console.log('文件内容相同 ，不用重写')
-      return
-    }
-		await writeFile(dataPath,  "export default " + JSON.stringify(blogData), 'utf8')
+			return
+		}
+		await writeFile(dataPath, 'export default ' + JSON.stringify(blogData), 'utf8')
 	}
 
 	/**
