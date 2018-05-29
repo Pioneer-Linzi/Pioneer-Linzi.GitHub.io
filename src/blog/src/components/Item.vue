@@ -1,5 +1,7 @@
 <template>
-  <div class="blog-item" v-html="content">
+  <div class="blog-item" >
+    <div class="content markdown-body" v-html="content">
+    </div>
   </div>
 </template>
 
@@ -29,7 +31,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
   .blog-item{
     width: 100%;
     margin-top: 10px;
@@ -42,7 +44,10 @@ export default {
     -webkit-border-radius : 2px;
     box-shadow : 0px 1px 3px rgba(26, 26, 26, 0.1);
     filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=0, OffY=1, Color='#1A1A1A');
-    overflow: hidden;
+    .content{
+      margin:20px;
+      overflow: hidden;
+    }
   }
 
 </style>

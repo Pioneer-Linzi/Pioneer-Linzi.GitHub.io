@@ -28,7 +28,8 @@ export default {
 </script>
 <style scoped>
   #blog-list{
-    width:600px;
+    margin-left:16px;
+    width:660px;
     display:flex;
     flex-direction: column;
     justify-content: flex-start;
