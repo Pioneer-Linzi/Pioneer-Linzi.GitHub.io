@@ -4,20 +4,37 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "dev": "webpack-dev-server --open"
   },
   "author": "",
   "license": "ISC",
+  "private": true,
   "dependencies": {
-    "react-dom": "^16.4.1",
-    "react": "^16.4.1"
+    "lodash": "^4.17.10",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.53",
     "@babel/preset-env": "^7.0.0-beta.53",
     "@babel/preset-react": "^7.0.0-beta.53",
     "babel-loader": "^8.0.0-beta.0",
+    "batch": "^0.6.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "destroy": "^1.0.4",
+    "globby": "^8.0.1",
     "html-webpack-plugin": "^3.2.0",
-    "webpack": "^4.16.0"
+    "http-parser-js": "^0.4.13",
+    "is-path-cwd": "^2.0.0",
+    "is-path-in-cwd": "^2.0.0",
+    "media-typer": "^0.3.0",
+    "p-map": "^1.2.0",
+    "path-is-inside": "^1.0.2",
+    "webpack": "^4.16.0",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4",
+    "websocket-extensions": "^0.1.3"
   }
 }

@@ -5,6 +5,8 @@
  * Distributed under terms of the MIT license.
  */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const webpack = require('webpack');
 
 const path = require('path');
 
@@ -17,6 +19,11 @@ module.exports = {
 	output: {
 		path: path.resolve(__dirname, 'dist'),
 		filename: 'bundle.js'
+	},
+	devtool: 'inline-source-map',
+	devServer:{
+		contentBase: './dist',
+		hot:         true
 	},
 	module: {
 		rules: [
@@ -34,9 +41,12 @@ module.exports = {
 		]
 	},
 	plugins:[
+		new CleanWebpackPlugin(['dist']),
 		new HtmlWebpackPlugin({
 			inject:true,
 			template:'./public/index.html'
-		})
+		}),
+		new webpack.NamedModulesPlugin(),
+		new webpack.HotModuleReplacementPlugin()
 	]
 };
