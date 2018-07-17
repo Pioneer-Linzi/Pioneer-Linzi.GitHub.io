@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Index from './pages/Index.jsx';
-import './App.css';
 
-class App extends Component {
+import './App.css';
+class App extends React.PureComponent {
   render() {
     return (
       <div className="App">
@@ -11,5 +11,4 @@ class App extends Component {
     );
   }
 }
-
 export default App;
