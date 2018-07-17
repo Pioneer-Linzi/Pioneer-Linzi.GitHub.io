@@ -13,7 +13,7 @@ const path = require('path');
 
 module.exports = {
 	//入口
-	entry: './src/index.js',
+	entry: './src/index.tsx',
 	// 输出
 	mode:'development',
 	output: {
@@ -25,19 +25,15 @@ module.exports = {
 		contentBase: './dist',
 		hot:         true
 	},
+	resolve: {
+		// Add '.ts' and '.tsx' as resolvable extensions.
+		extensions: [".ts", ".tsx", ".js", ".json"]
+	},
 	module: {
 		rules: [
-			{
-				test: /\.js$/,
-				// babel-loader 很慢
-				exclude: /(node_modules|bower_components)/,
-				use: {
-					loader: 'babel-loader',
-					options: {
-						cacheDirectory:true
-					}
-				}
-			}
+			{ test: /\.tsx?$/, loader: "awesome-typescript-loader" },
+			// All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
+			{ enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
 		]
 	},
 	plugins:[
@@ -48,5 +44,5 @@ module.exports = {
 		}),
 		new webpack.NamedModulesPlugin(),
 		new webpack.HotModuleReplacementPlugin()
-	]
+	],
 };
