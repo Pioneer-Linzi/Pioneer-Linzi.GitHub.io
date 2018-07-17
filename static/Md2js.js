@@ -15,7 +15,7 @@ class Md2js {
 	}
 	apply (compiler) {
 		// 指定一个挂载到 webpack 自身的事件钩子。
-		compiler.plugin('entryOption', (compilation /* 处理 webpack 内部实例的特定数据。 */, callback) => {
+		compiler.plugin('make', (compilation /* 处理 webpack 内部实例的特定数据。 */, callback) => {
 			console.log('markdown file to js var')
 			this.init()
 			callback()
@@ -45,13 +45,15 @@ class Md2js {
 
 		// 文件是否存在
 		let stat = fs.existsSync(dataPath)
-		if (stat === false) {
-	    await appendFile(dataPath)
+		if (Boolean(stat) === false) {
+      await appendFile(dataPath)
 		}
-		await writeFile(dataPath, 'export default ' + JSON.stringify(blogData), 'utf8')
-
-		// console.log(write)
-		// console.log(JSON.stringify(blogData))
+		let oldfile = await readFileAsync(dataPath)
+    if(''+oldfile==="export default " + JSON.stringify(blogData)){
+	    console.log('文件内容相同 ，不用重写')
+      return
+    }
+		await writeFile(dataPath,  "export default " + JSON.stringify(blogData), 'utf8')
 	}
 
 	/**

@@ -5,10 +5,9 @@
 				<div class="logo">
 				</div>
         <div class="nav">
-          <a href="./page/reactDemo.html" class="nav-item item-activity">首页</a>
-          <a href="./page/reactDemo.html" class="nav-item">前端</a>
-          <a href="./page/reactDemo.html" class="nav-item">后端</a>
-          <a href="./page/reactDemo.html" class="nav-item">服务器</a>
+          <router-link to="/" class="nav-item item-activity">首页</router-link>
+          <router-link to="/blogList" class="nav-item " v-for="(value ,key) in navList" v-bind:key="key" >{{key}}</router-link>
+          <!--<a href="./page/reactDemo.html"  class="nav-item"  v-for="(value ,key) in navList" v-bind:key="key" >{{key}}</a>-->
           <a href="./page/reactDemo.html" class="nav-item">工具</a>
           <a href="./page/reactDemo.html" class="nav-item">实验室</a>
         </div>
@@ -17,8 +16,14 @@
 	</div>
 </template>
 <script>
+/* eslint-disable no-mixed-spaces-and-tabs */
 export default {
-	name: 'Header'
+	name: 'Header',
+	computed: {
+	  navList: function () {
+	    return this.$store.state.blog.blogs
+		}
+	}
 }
 </script>
 <style lang="less" scope>

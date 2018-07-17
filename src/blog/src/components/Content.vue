@@ -1,28 +1,31 @@
 <template>
   <div id="Content" class="content">
-    <vue-markdown >{{source}}</vue-markdown>
+    <div class="markdown-body" v-html="renderedMarkdown">
+    </div>
   </div>
 </template>
 <script>
 /* eslint-disable no-mixed-spaces-and-tabs */
-
-import VueMarkdown from 'vue-markdown'
 export default {
 	name: 'Content',
-	data () {
-	 return {
+	data: function () {
+		return {
+			renderedMarkdown: ''
 		}
-	},
-	components: {
-		VueMarkdown
 	},
 	created () {
-		console.log(this.$store.state.blog)
+	  let data = this.$store.state.blog.blogs['backend'][0]['content']
+		console.log(data)
+		console.log(2)
+		this.$http.post('https://api.github.com/markdown', {text: data, mode: 'gfm'}).then(function (response) {
+			// success callback
+			this.renderedMarkdown = response.data
+		}, function (response) {
+			// error callback
+			console.log(response.data)
+		})
 	},
 	computed: {
-		source: function () {
-		  return this.$store.state.blog.blogs['backend'][0]['content']
-		}
 	}
 }
 </script>
@@ -31,8 +34,12 @@ export default {
 
   #Content {
     width: 660px;
-    height: 500px;
     margin-top: 10px;
     margin-left: 16px;
+    clear:both;
+  }
+  .markdown-body{
+    text-align: left;
+    margin:20px;
   }
 </style>

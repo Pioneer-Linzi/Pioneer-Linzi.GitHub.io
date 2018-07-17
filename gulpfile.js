@@ -43,7 +43,7 @@ gulp.task('default',['connect','watch'], function() {
 });
 
 
-gulp.task('blogBuild',function(cb){
+gulp.task('blogBuild',['clean'],function(cb){
     try{
 
         child_process.exec('cd  src/blog && npm run build ', { shell: '/bin/sh' }, function (error, stdout, stderr) {

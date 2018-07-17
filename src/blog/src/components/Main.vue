@@ -1,6 +1,7 @@
 <template>
 	<div id="main">
-		<v-content></v-content>
+		<!--<v-content></v-content>-->
+    <router-view></router-view>
 		<v-aside></v-aside>
 	</div>
 </template>
@@ -21,6 +22,5 @@ export default {
 	width:100%;
 	display: flex;
 	justify-content: space-between;
-	height:300px;
 }
 </style>
