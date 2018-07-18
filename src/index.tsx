@@ -1,10 +1,18 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
+import *  as React from 'react';
+import * as ReactDom from 'react-dom';
+import Button from '@material-ui/core/Button';
+import './index.scss'
 
-import { Hello } from "./components/index";
+function App() {
+  return (
+    <Button variant="contained" color="primary">
+      Hello World
+    </Button>
+  );
+}
 
-ReactDOM.render(
-    <Hello compiler="TypeScript" framework="React" />,
+ReactDom.render(
+    <App />,
     document.getElementById("app")
 );
 
