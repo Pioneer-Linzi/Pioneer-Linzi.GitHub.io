@@ -18,6 +18,9 @@
     "react-dom": "^16.4.1"
   },
   "devDependencies": {
+    "@material-ui/core": "^1.4.0",
+    "@material-ui/icons": "^1.1.0",
+    "autoprefixer": "^9.0.0",
     "awesome-typescript-loader": "^5.2.0",
     "batch": "^0.6.1",
     "clean-webpack-plugin": "^0.1.19",
