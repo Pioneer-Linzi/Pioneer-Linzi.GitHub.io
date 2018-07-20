@@ -2,12 +2,12 @@ import *  as React from 'react';
 import * as ReactDom from 'react-dom';
 import Button from '@material-ui/core/Button';
 import './index.scss'
+import 'reset-css'
+import {CanvasPanel} from './components/canvas'
 
 function App() {
   return (
-    <Button variant="contained" color="primary">
-      Hello World
-    </Button>
+    <CanvasPanel></CanvasPanel>
   );
 }
 
