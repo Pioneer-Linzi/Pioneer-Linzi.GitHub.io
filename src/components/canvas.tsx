@@ -1,5 +1,5 @@
-import *  as React from 'react';
-import * as ReactDom from 'react-dom';
+import *  as React from '_@types_react@16.4.6@@types/react';
+import * as ReactDom from '_@types_react-dom@16.0.6@@types/react-dom';
 import './canvas.scss'
 class CanvasPanel extends React.Component{
     constructor(props:any){

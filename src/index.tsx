@@ -1,13 +1,12 @@
 import *  as React from 'react';
 import * as ReactDom from 'react-dom';
-import Button from '@material-ui/core/Button';
 import './index.scss'
 import 'reset-css'
-import {CanvasPanel} from './components/canvas'
+import TankPanel from './game/tank/Panel';
 
 function App() {
   return (
-    <CanvasPanel></CanvasPanel>
+	  <TankPanel></TankPanel>
   );
 }
 

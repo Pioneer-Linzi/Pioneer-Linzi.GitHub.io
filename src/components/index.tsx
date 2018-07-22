@@ -1,4 +1,4 @@
-import * as React from "react"; 
+import * as React from "_@types_react@16.4.6@@types/react"; 
 export interface HelloProps { compiler: string; framework: string; }
 
 // 'HelloProps' describes the shape of props.
