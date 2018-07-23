@@ -10,12 +10,12 @@ export default class Panel extends React.PureComponent{
     	this.init();
 	}
     init(){
-    	new TanksController(window.document.querySelector('#tanks-panel > tank-canvas') as HTMLCanvasElement);
+		new TanksController(window.document.querySelector('#tank-canvas') as HTMLCanvasElement);
 	}
 	render(){
 		return (
 			<div id='tank-panel'>
-			<canvas className='tank-canvas'>
+			<canvas id='tank-canvas'>
 			</canvas>
 			</div>
 		);
