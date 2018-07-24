@@ -21,19 +21,20 @@ export class TanksController implements TanksInterfaceController {
 			this.ctx.clearRect(0,0,this.selector.width,this.selector.height);
 			this.ctx.fillStyle= '#444';
 			this.ctx.fillRect(0,0,window.innerWidth,window.innerHeight);
-			if(n==0){
-				n=Math.floor(Math.random()*100);
-                const i=Math.floor(Math.random()*10);
-                if(i<=4){
-                    tank.direction=(i+2)%4;
-                }
-			}else{
-				n--;
-			}
-			if(tank.positionX<0||tank.positionY<0||tank.positionY>this.selector.height||tank.positionX>this.selector.width){
+            if(tank.positionX<0||tank.positionY<0||tank.positionY+25>this.selector.height||tank.positionX+25>this.selector.width){
                 const i=Math.floor(Math.random()*10);
                 if(i<=4){
                     tank.direction=i;
+                }
+            }else{
+                if(n==0){
+                    n=Math.floor(Math.random()*100);
+                    const i=Math.floor(Math.random()*10);
+                    if(i<=4){
+                        tank.direction=(i+2)%4;
+                    }
+                }else{
+                    n--;
                 }
 			}
 			tank.move();
