@@ -16,15 +16,14 @@ export class TanksController implements TanksInterfaceController {
 		this.ctx.fillStyle= '#444';
 		this.ctx.fillRect(0,0,window.innerWidth,window.innerHeight);
 		let tank=new Tank(this.ctx);
-		tank.draw();
 		window.setInterval(()=>{
 			this.ctx.clearRect(0,0,this.selector.width,this.selector.height);
 			this.ctx.fillStyle= '#444';
 			this.ctx.fillRect(0,0,window.innerWidth,window.innerHeight);
-			tank.direction=Direction.RIGHT
-			tank.move()
+			tank.direction=Direction.DOWN;
+			tank.move();
 			tank.draw();
-		},1000)
+		},100)
 	}
 	addTank(tank: Tanks) {
 		throw new Error("Method not implemented.");
