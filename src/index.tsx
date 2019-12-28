@@ -1,5 +1,4 @@
-import * as React from 'react';
-import * as ReactDom from 'react-dom';
+import ReactDom = require('react-dom');
 import 'reset-css';
 import TankPanel from './game/tank/Panel';
 import './index.scss';
@@ -10,7 +9,8 @@ import {
   Switch,
   Route,
   Link
-} from "react-router-dom";
+} from 'react-router-dom';
+import React = require('react');
 
 function App() {
   return (

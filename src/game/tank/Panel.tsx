@@ -1,11 +1,10 @@
-import * as React from 'react';
+import React = require('react');
 import './Panel.scss';
 import {TanksController} from "./TanksController";
 export default class Panel extends React.PureComponent{
     constructor(props:any){
 		super(props);
     }
-
     componentDidMount(){
     	this.init();
 	}
