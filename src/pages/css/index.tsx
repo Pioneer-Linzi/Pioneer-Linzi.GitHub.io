@@ -1,6 +1,7 @@
 import React = require('react');
+import './index.scss'
 export default function (props: {}){
     return (
-        <div>dev</div>
+        <div className='css'>dev</div>
     )
 }

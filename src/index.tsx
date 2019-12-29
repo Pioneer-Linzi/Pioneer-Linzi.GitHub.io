@@ -3,6 +3,9 @@ import 'reset-css';
 import TankPanel from './game/tank/Panel';
 import './index.scss';
 
+import { renderRoutes } from 'react-router-config';
+
+
 
 import {
   HashRouter as Router,
@@ -11,14 +14,16 @@ import {
   Link
 } from 'react-router-dom';
 import React = require('react');
+import routes  from './routes'
 
 function App() {
   return (
     <div>
-        <Router basename='/'>
-          <Route path={'/tank'} component={TankPanel}/>
-          <Route path={'/css'} component={Css}/>
-        </Router>
+      <Router basename='/'>
+        {
+         renderRoutes(routes)
+        }
+      </Router>
     </div>
   );
 }
