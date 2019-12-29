@@ -17,6 +17,7 @@ function App() {
     <div>
         <Router basename='/'>
           <Route path={'/tank'} component={TankPanel}/>
+          <Route path={'/css'} component={Css}/>
         </Router>
     </div>
   );
