@@ -2,7 +2,6 @@ import ReactDom = require('react-dom');
 import 'reset-css';
 import TankPanel from './game/tank/Panel';
 import './index.scss';
-
 import { renderRoutes } from 'react-router-config';
 
 
