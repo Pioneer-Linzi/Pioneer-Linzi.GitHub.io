@@ -32,6 +32,14 @@
             "node": {
                 "enableDebugging": true
             }
+        },
+        {
+            "type": "npm",
+            "script": "dev",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }
