@@ -11,6 +11,7 @@ export default function (props: {}) {
                 <div className="dot"></div>
             </div>
             <Reveal title='text will slow show' />
+            <Snow></Snow>
         </div>
     )
 }
@@ -29,6 +30,18 @@ function Reveal(props: { title: string }) {
                     return <span key={Math.random()} style={style}>{item}</span>
                 })}
             </div>
+        </div>
+    )
+}
+
+
+function Snow(props: {}){
+    const arr = new Array(1000);
+    return (
+        <div className='snow'>
+            {arr.map(function(){
+                return <div className='snow-item'></div>
+            })}
         </div>
     )
 }
