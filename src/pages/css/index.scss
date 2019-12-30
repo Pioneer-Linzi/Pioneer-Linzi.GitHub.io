@@ -1,45 +1,144 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
 .css {
-    color: white;
+  color: white;
+}
+*{
+    font-family: Raleway, sans-serif;
 }
 
-.loading{
-    background: #222;
-    height: 10vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    $colors: #7ef9ff, #89cff0, #4682b4, #0f52ba, #000080;
-    .dot{
-        position: relative;
-        width: 2em;
-        height: 2em;
-        margin: 0.8em;
-        border-radius: 50%;
+.loading {
+  background: #222;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  $colors: #7ef9ff, #89cff0, #4682b4, #0f52ba, #000080;
+  .dot {
+    position: relative;
+    width: 2em;
+    height: 2em;
+    margin: 0.8em;
+    border-radius: 50%;
+    &::before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      background: inherit;
+      border-radius: inherit;
+      animation: wave 2s infinite;
+    }
+    @for $i from 1 through 5 {
+      &:nth-child(#{$i}) {
+        background: nth($colors, $i);
         &::before {
-            position: absolute;
-            content: "";
-            width: 100%;
-            height: 100%;
-            background: inherit;
-            border-radius: inherit;
-            animation: wave 2s infinite;
+          animation-delay: $i * 0.2s;
         }
-        @for $i from 1 through 5{
-            &:nth-child(#{$i}){
-               background: nth($colors, $i);
-               &::before{
-                    animation-delay: $i * 0.2s;
-               }
-            }
-        }
+      }
     }
-    @keyframes wave {
-        50%,
-        75% {
-          transform: scale(2.5);
-        }
-        80%,100%{
-            opacity: 0;
-        }
+  }
+  @keyframes wave {
+    50%,
+    75% {
+      transform: scale(2.5);
     }
+    80%,
+    100% {
+      opacity: 0;
+    }
+  }
+}
+
+.reveal {
+  position: relative;
+  width: 100vw;
+  height: 10vh;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .text-wrap {
+    position: relative;
+    padding:3px 15px;
+    font-size: 20px;
+    white-space: pre;
+    span{
+        font-family: Raleway, sans-serif;
+        transition: all;
+        display:inline-block;
+        animation: revealText 2.4s ease-in both;
+    }
+    &::before {
+      box-sizing: border-box;
+      content: "";
+      width: 2px;
+      height: 100%;
+      background: white;
+      padding: 0;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      top: 0;
+      margin: auto;
+      animation: revealBefore 2.4s ease-in forwards;
+    }
+    &::after{
+      box-sizing: border-box;
+      content: "";
+      width: 2px;
+      height: 100%;
+      background: white;
+      padding: 0;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      margin: auto;
+      animation: revealAfter 2.4s ease-in forwards;
+    }
+  }
+  @keyframes revealBefore {
+    from {
+      opacity: 0;
+      left:25%;
+      transform: translateX(50%)
+    }
+    50% {
+      opacity: 1;
+      left:-5%;
+      transform: scale(1.2);
+    }
+    to {
+      opacity: 1;
+      left:0;
+      transform: scale(1);
+    }
+  }
+  @keyframes revealAfter{
+    from {
+      opacity: 0;
+      right:25%;
+      transform: translateX(50%)
+    }
+    50% {
+      opacity: 1;
+      right:-5%;
+      transform: scale(1.2);
+    }
+    to {
+      opacity: 1;
+      right:0;
+      transform: scale(1);
+    }
+  }
+  @keyframes revealText{
+      from{
+          opacity: 0;
+          transform: scale(0);
+      }
+      to{
+          opacity: 1;
+          transform: scale(1);
+      }
+  }
 }
