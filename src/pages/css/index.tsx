@@ -36,10 +36,10 @@ function Reveal(props: { title: string }) {
 
 
 function Snow(props: {}){
-    const arr = new Array(1000);
+    const arr = new Array(1000).fill(1);
     return (
         <div className='snow'>
-            {arr.map(function(){
+            {arr.map(function(item){
                 return <div className='snow-item'></div>
             })}
         </div>
