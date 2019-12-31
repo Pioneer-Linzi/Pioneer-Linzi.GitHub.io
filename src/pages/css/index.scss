@@ -1,10 +1,14 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
 .css {
   color: white;
+}
+*{
+    font-family: Raleway, sans-serif;
 }
 
 .loading {
   background: #222;
-  height: 10vh;
+  height: 20vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,7 +52,7 @@
 .LandInText {
   display: flex;
   flex-direction: column;
-  height: 10vh;
+  height: 20vh;
   width: 100vw;
   justify-content: center;
   align-items: center;
@@ -69,5 +73,113 @@
     height: 5vh;
     display: inline-block;
     animation: landInText 0.5s ease-out both;
+    }
   }
+
+.reveal {
+  position: relative;
+  width: 100vw;
+  height: 20vh;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .text-wrap {
+    position: relative;
+    padding:3px 15px;
+    font-size: 20px;
+    white-space: pre;
+    span{
+        font-family: Raleway, sans-serif;
+        transition: all;
+        display:inline-block;
+        animation: revealText 2.4s ease-in both;
+    }
+    &::before {
+      box-sizing: border-box;
+      content: "";
+      width: 2px;
+      height: 100%;
+      background: white;
+      padding: 0;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      top: 0;
+      margin: auto;
+      animation: revealBefore 2.4s ease-in forwards;
+    }
+    &::after{
+      box-sizing: border-box;
+      content: "";
+      width: 2px;
+      height: 100%;
+      background: white;
+      padding: 0;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      margin: auto;
+      animation: revealAfter 2.4s ease-in forwards;
+    }
+  }
+  @keyframes revealBefore {
+    from {
+      opacity: 0;
+      left:25%;
+      transform: translateX(50%)
+    }
+    50% {
+      opacity: 1;
+      left:-5%;
+      transform: scale(1.2);
+    }
+    to {
+      opacity: 1;
+      left:0;
+      transform: scale(1);
+    }
+  }
+  @keyframes revealAfter{
+    from {
+      opacity: 0;
+      right:25%;
+      transform: translateX(50%)
+    }
+    50% {
+      opacity: 1;
+      right:-5%;
+      transform: scale(1.2);
+    }
+    to {
+      opacity: 1;
+      right:0;
+      transform: scale(1);
+    }
+  }
+  @keyframes revealText{
+      from{
+          opacity: 0;
+          transform: scale(0);
+      }
+      to{
+          opacity: 1;
+          transform: scale(1);
+      }
+  }
+}
+
+
+.snow{
+    height:10vh;
+    width:100%;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    overflow: hidden;
+    filter: drop-shadow(0 0 10px white);
+    .snow-item{
+        background:white;
+        width:4px;
+        height:5px;
+    }
 }
