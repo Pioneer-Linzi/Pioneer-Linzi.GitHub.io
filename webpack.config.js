@@ -10,6 +10,7 @@ const webpack = require('webpack');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
+const TodoCheck = require('./todoCheck')
 
 
 
@@ -64,7 +65,7 @@ module.exports = {
 			filename: "css/[name].css",
 			chunkFilename: "[id].css"
 		}),
-		
+		new TodoCheck(),
 		new CleanWebpackPlugin(['dist']),
 		new HtmlWebpackPlugin({
 			inject: true,
